@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -8,6 +9,8 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
@@ -16,7 +19,7 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
 
-    this.ListeningStateChangedEvent({
+    this.state({
       email: "",
       username: "",
       password: ""
@@ -30,11 +33,26 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    const { formType } = this.props;
+
+    const display = formType === 'log in' ? (
+      <div className="change-form">
+
+      </div>
+    ) : (
+      <div className="change-form">
+
+      </div>
+    )
 
     return(
       <div className="main-session-div">
-
+        <div className="change-form-container">
+          {display}
+        </div>
       </div>
     )
   }
 }
+
+export default withRouter(SessionForm);
