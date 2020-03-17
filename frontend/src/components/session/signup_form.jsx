@@ -7,7 +7,9 @@ class SignupForm extends React.Component {
     this.state = {
       email: "",
       username: "",
-      password: ""
+      password: "",
+      password2: "",
+      errors: {}
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,7 +19,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
 
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    this.props.signup(user)
 
     this.state({
       email: "",
@@ -27,36 +29,55 @@ class SignupForm extends React.Component {
   }
 
   update(field) {
-    return e => this.ListeningStateChangedEvent({
+    return e => this.setState({
       [field]: e.currentTarget.value
     })
   }
 
   render() {
-    const { formType } = this.props;
-
-    const display = formType === 'log in' ? (
-      <div className="change-form">
-
-      </div>
-    ) : (
-        <div className="change-form">
-
-        </div>
-      )
 
     return (
       <div className="main-session-div">
-        <div className="main-session-container">
+        <div className="signup-form">
+          <form onSubmit={this.handleSubmit}>
+            <input 
+              type="text"
+              value={this.state.email}
+              placeholder="email"
+              onChange={this.update('email')}
+              />
 
-          <div className="change-form-container">
-            {display}
-          </div>
+              <input 
+                type="username"
+                value={this.state.username}
+                placeholder="username"
+                onChange={this.update('username')}
+              />
+
+              <input 
+                type="password"
+                value={this.state.password}
+                placeholder="password"
+                onChange={this.update('password')}
+              />
+
+              <input 
+                type="password"
+                value={this.state.password2}
+                placeholder="confirm password"
+                onChange={this.update('password2')}
+              />
+
+              <input type="submit" value="sign up"/>
+          </form>
         </div>
 
+        <div className="change-to-login">
+          <p>login instead</p>
+        </div>
       </div>
     )
   }
 }
 
-export default withRouter(SessionForm);
+export default withRouter(SignupForm);
