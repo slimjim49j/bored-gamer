@@ -47,9 +47,13 @@ class SessionForm extends React.Component {
 
     return(
       <div className="main-session-div">
-        <div className="change-form-container">
-          {display}
+        <div className="main-session-container">
+          
+          <div className="change-form-container">
+            {display}
+          </div>
         </div>
+        
       </div>
     )
   }
