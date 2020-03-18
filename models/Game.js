@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
+const Mechanic = new Schema({
+  mechanic: String
+});
+
+const Category = new Schema({
+  category: String
+});
+
 const GameSchema = new Schema({
     bggGameId: Number,
     title: String,
@@ -17,14 +25,6 @@ const GameSchema = new Schema({
     imageUrl: String,
     designer: String,
     bggGameUrl: String
-});
-
-const Mechanic = new Schema({
-    mechanic: String
-});
-
-const Category = new Schema({
-    category: String
 });
 
 module.exports = Game = mongoose.model("Game", GameSchema);

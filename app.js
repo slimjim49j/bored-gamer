@@ -25,5 +25,14 @@ mongoose
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
 
+// seeding games route, only run once
+// const seeds = require("./seeds/seeds.json");
+// const loadSeeds = require("./seeds/load_seeds");
+
+// app.get("/api/seed", (req, res) => {
+//     console.log("hit")
+//     loadSeeds(seeds);
+// })
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
