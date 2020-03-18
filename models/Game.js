@@ -10,13 +10,21 @@ const GameSchema = new Schema({
     avgTime: Number, 
     avgRating: Number, 
 
-    mechanic: String, 
-    category: String, 
+    mechanics: [Mechanic], 
+    categories: [Category], 
 
     year: Number, 
     imageUrl: String,
     designer: String,
     bggGameUrl: String
+});
+
+const Mechanic = new Schema({
+    mechanic: String
+});
+
+const Category = new Schema({
+    category: String
 });
 
 module.exports = Game = mongoose.model("Game", GameSchema);
