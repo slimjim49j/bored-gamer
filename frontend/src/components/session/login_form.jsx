@@ -1,5 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import '../../assets/stylesheets/login_form.css';
+import '../../assets/stylesheets/css_reset.css'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -34,29 +37,42 @@ class LoginForm extends React.Component {
   render() {
 
     return (
-      <div className="main-session-div">
-        <div className="signup-form">
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="username"
-              value={this.state.username}
-              placeholder="username"
-              onChange={this.update('username')}
-            />
+      <div className="main-login-div">
+        <div className="signup-div">
+          <div className="signup-form">
 
-            <input
-              type="password"
-              value={this.state.password}
-              placeholder="password"
-              onChange={this.update('password')}
-            />
+            <div className="login-message">
+              <p className="login-welcome">welcome back stranger</p>
+            </div>
+            
+            <form className="session-form" onSubmit={this.handleSubmit}>
+              <input
+                type="username"
+                value={this.state.username}
+                placeholder="username"
+                onChange={this.update('username')}
+              />
 
-            <input type="submit" value="login" />
-          </form>
-        </div>
+              <input
+                type="password"
+                value={this.state.password}
+                placeholder="password"
+                onChange={this.update('password')}
+              />
 
-        <div className="change-to-signup">
-          <p>sign up instead</p>
+              <input className="session-btn" type="submit" value="login" />
+            </form>
+            <div className="change-to-signup">
+              <Link className="change-form-btn" to="/signup">sign up instead</Link>
+            </div>
+          </div>
+          
+          <div className="login-image-container">
+            {/* <img src="frontend/src/assets/images/space-expl.jpg"/> */}
+          </div>
+
+
+        
         </div>
       </div>
     )
