@@ -53,6 +53,7 @@ class SignupForm extends React.Component {
 
             <form className="session-form" onSubmit={this.handleSubmit}>
               <input 
+                className="form-input"
                 type="text"
                 value={this.state.email}
                 placeholder="email"
@@ -60,6 +61,7 @@ class SignupForm extends React.Component {
                 />
 
                 <input 
+                  className="form-input"
                   type="username"
                   value={this.state.username}
                   placeholder="username"
@@ -67,6 +69,7 @@ class SignupForm extends React.Component {
                 />
 
                 <input 
+                  className="form-input"
                   type="password"
                   value={this.state.password}
                   placeholder="password"
@@ -74,6 +77,7 @@ class SignupForm extends React.Component {
                 />
 
                 <input 
+                  className="form-input"
                   type="password"
                   value={this.state.password2}
                   placeholder="confirm password"

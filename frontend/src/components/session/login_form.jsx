@@ -56,6 +56,7 @@ class LoginForm extends React.Component {
             
             <form className="session-form" onSubmit={this.handleSubmit}>
               <input
+                className = "form-input"
                 type="username"
                 value={this.state.username}
                 placeholder="username"
@@ -63,6 +64,7 @@ class LoginForm extends React.Component {
               />
 
               <input
+                className = "form-input"
                 type="password"
                 value={this.state.password}
                 placeholder="password"
@@ -70,7 +72,7 @@ class LoginForm extends React.Component {
               />
 
               <input className="session-btn" type="submit" value="login" />
-              <input className="demo-btn" onClick={this.loginDemo} type="button" value="demo"/>
+              <button className="demo-btn" onClick={this.loginDemo}>demo</button>
             </form>
             <div className="change-to-signup">
               <Link className="change-form-btn" to="/signup">sign up instead</Link>
