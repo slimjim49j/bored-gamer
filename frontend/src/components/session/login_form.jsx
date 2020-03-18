@@ -23,7 +23,7 @@ class LoginForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.login(user)
 
-    this.state({
+    this.setState({
       username: "",
       password: ""
     })
@@ -41,6 +41,19 @@ class LoginForm extends React.Component {
       username: "demo_user",
       password: "password"
     }
+    this.props.login(demoUser)
+  }
+
+  renderErrors() {
+    return (
+      <ul className="error-list">
+        {this.props.errors.map((error, i) => (
+          <li key={`${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
   }
 
   render() {
@@ -74,6 +87,11 @@ class LoginForm extends React.Component {
               <input className="session-btn" type="submit" value="login" />
               <button className="demo-btn" onClick={this.loginDemo}>demo</button>
             </form>
+
+            <div>
+              {/* {this.renderErrors()} */}
+            </div>
+
             <div className="change-to-signup">
               <Link className="change-form-btn" to="/signup">sign up instead</Link>
             </div>

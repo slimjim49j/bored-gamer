@@ -7,6 +7,7 @@ import '../../assets/stylesheets/css_reset.css';
 class SignupForm extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
       email: "",
       username: "",
@@ -24,10 +25,11 @@ class SignupForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.signup(user)
 
-    this.state({
+    this.setState({
       email: "",
       username: "",
-      password: ""
+      password: "",
+      password2: "",
     })
   }
 
