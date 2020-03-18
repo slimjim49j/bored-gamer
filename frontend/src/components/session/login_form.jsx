@@ -45,6 +45,7 @@ class LoginForm extends React.Component {
   }
 
   renderErrors() {
+    debugger
     return (
       <ul className="error-list">
         {this.props.errors.map((error, i) => (
@@ -54,6 +55,10 @@ class LoginForm extends React.Component {
         ))}
       </ul>
     )
+  }
+
+  componentWillUnmount() {
+    this.props.removeErrors();
   }
 
   render() {
@@ -89,7 +94,7 @@ class LoginForm extends React.Component {
             </form>
 
             <div>
-              {/* {this.renderErrors()} */}
+              {this.renderErrors()}
             </div>
 
             <div className="change-to-signup">

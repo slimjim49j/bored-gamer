@@ -39,6 +39,23 @@ class SignupForm extends React.Component {
     })
   }
 
+  renderErrors() {
+    debugger
+    return (
+      <ul className="error-list">
+        {this.props.errors.map((error, i) => (
+          <li key={`${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  componentWillUnmount() {
+    this.props.removeErrors();
+  }
+
   render() {
 
     return (
@@ -88,6 +105,11 @@ class SignupForm extends React.Component {
 
                 <input className="session-btn" type="submit" value="sign up"/>
             </form>
+
+            <div>
+              {this.renderErrors()}
+            </div>
+
             <div className="change-to-login">
               <Link className="change-form-btn" to="/login">login instead</Link>
             </div>
