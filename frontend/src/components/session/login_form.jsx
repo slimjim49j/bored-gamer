@@ -38,8 +38,8 @@ class LoginForm extends React.Component {
 
     return (
       <div className="main-login-div">
-        <div className="signup-div">
-          <div className="signup-form">
+        <div className="login-div">
+          <div className="login-form">
 
             <div className="login-message">
               <p className="login-welcome">welcome back stranger</p>
