@@ -1,0 +1,43 @@
+.main-signup-div {
+  font-family: 'Sen', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 131, 138);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  min-width: 100%;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  width: 100%;
+}
+
+.signup-welcome {
+  color: white;
+  font-size: 26px;
+}
+
+.signup-image-container {
+  background-image: url("../images/lunar-woods.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 800px;
+  height: 100vh;
+}
+
