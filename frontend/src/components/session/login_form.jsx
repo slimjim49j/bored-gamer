@@ -37,12 +37,12 @@ class LoginForm extends React.Component {
   render() {
 
     return (
-      <div className="main-session-div">
+      <div className="main-login-div">
         <div className="signup-div">
           <div className="signup-form">
 
             <div className="login-message">
-              <p className="login-welcome">welcome back</p>
+              <p className="login-welcome">welcome back stranger</p>
             </div>
             
             <form className="session-form" onSubmit={this.handleSubmit}>
