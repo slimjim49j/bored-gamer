@@ -14,6 +14,7 @@ class LoginForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
   handleSubmit(e) {
@@ -34,12 +35,20 @@ class LoginForm extends React.Component {
     })
   }
 
+  loginDemo(e) {
+    e.preventDefault();
+    const demoUser = {
+      username: "demo_user",
+      password: "password"
+    }
+  }
+
   render() {
 
     return (
       <div className="main-login-div">
-        <div className="signup-div">
-          <div className="signup-form">
+        <div className="login-div">
+          <div className="login-form">
 
             <div className="login-message">
               <p className="login-welcome">welcome back stranger</p>
@@ -61,6 +70,7 @@ class LoginForm extends React.Component {
               />
 
               <input className="session-btn" type="submit" value="login" />
+              <input className="demo-btn" onClick={this.loginDemo} type="button" value="demo"/>
             </form>
             <div className="change-to-signup">
               <Link className="change-form-btn" to="/signup">sign up instead</Link>

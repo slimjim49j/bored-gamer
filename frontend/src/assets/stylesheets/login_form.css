@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.signup-div {
+.login-div {
   /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
@@ -23,7 +23,7 @@
   min-width: 100%;
 }
 
-.signup-form {
+.login-form {
   /* border: 1px solid white; */
   display: flex;
   flex-direction: column;
@@ -54,6 +54,7 @@
   height: 30px;
   border: none;
   border-radius: 2px;
+  font-size: 12px;
 }
 
 .session-form > input:focus {
@@ -71,6 +72,11 @@
   background-repeat: no-repeat;
   width: 800px;
   height: 100vh;
+}
+
+.demo-btn:hover {
+  cursor: pointer;
+  opacity: 80%;
 }
 
 .change-form-btn {
