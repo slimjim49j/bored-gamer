@@ -11,6 +11,7 @@ class Header extends React.Component {
   render() {
     const { currentUser, logout } = this.props;
 
+    // debugger;
     const display = currentUser ? (
       <div className="logout-container">
         <p>welcome {currentUser.username}</p>
