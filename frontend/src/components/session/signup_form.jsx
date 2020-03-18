@@ -40,7 +40,7 @@ class SignupForm extends React.Component {
   }
 
   renderErrors() {
-    debugger
+    // debugger
     return (
       <ul className="error-list">
         {this.props.errors.map((error, i) => (

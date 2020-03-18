@@ -45,7 +45,6 @@ class LoginForm extends React.Component {
   }
 
   renderErrors() {
-    debugger
     return (
       <ul className="error-list">
         {this.props.errors.map((error, i) => (
