@@ -54,6 +54,7 @@
   height: 30px;
   border: none;
   border-radius: 2px;
+  font-size: 12px;
 }
 
 .session-form > input:focus {
@@ -71,6 +72,11 @@
   background-repeat: no-repeat;
   width: 800px;
   height: 100vh;
+}
+
+.demo-btn:hover {
+  cursor: pointer;
+  opacity: 80%;
 }
 
 .change-form-btn {

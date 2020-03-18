@@ -46,7 +46,12 @@ class SignupForm extends React.Component {
           <div className="signup-image-container"></div>
 
           <div className="signup-form">
-            <form onSubmit={this.handleSubmit}>
+
+            <div className="signup-message">
+              <p className="signup-welcome">join us</p>
+            </div>
+
+            <form className="session-form" onSubmit={this.handleSubmit}>
               <input 
                 type="text"
                 value={this.state.email}
@@ -75,7 +80,7 @@ class SignupForm extends React.Component {
                   onChange={this.update('password2')}
                 />
 
-                <input type="submit" value="sign up"/>
+                <input className="session-btn" type="submit" value="sign up"/>
             </form>
             <div className="change-to-login">
               <Link className="change-form-btn" to="/login">login instead</Link>
