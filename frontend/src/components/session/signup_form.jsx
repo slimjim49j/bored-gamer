@@ -7,6 +7,7 @@ import '../../assets/stylesheets/css_reset.css';
 class SignupForm extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
       email: "",
       username: "",
@@ -24,10 +25,11 @@ class SignupForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.signup(user)
 
-    this.state({
+    this.setState({
       email: "",
       username: "",
-      password: ""
+      password: "",
+      password2: "",
     })
   }
 
@@ -53,6 +55,7 @@ class SignupForm extends React.Component {
 
             <form className="session-form" onSubmit={this.handleSubmit}>
               <input 
+                className="form-input"
                 type="text"
                 value={this.state.email}
                 placeholder="email"
@@ -60,6 +63,7 @@ class SignupForm extends React.Component {
                 />
 
                 <input 
+                  className="form-input"
                   type="username"
                   value={this.state.username}
                   placeholder="username"
@@ -67,6 +71,7 @@ class SignupForm extends React.Component {
                 />
 
                 <input 
+                  className="form-input"
                   type="password"
                   value={this.state.password}
                   placeholder="password"
@@ -74,6 +79,7 @@ class SignupForm extends React.Component {
                 />
 
                 <input 
+                  className="form-input"
                   type="password"
                   value={this.state.password2}
                   placeholder="confirm password"
