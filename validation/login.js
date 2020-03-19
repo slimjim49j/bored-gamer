@@ -6,11 +6,11 @@ module.exports = function validateLoginInput(data) {
 
     data.username = validText(data.username) ? data.username : '';
     data.password = validText(data.password) ? data.password : '';
-    debugger
+   
     if (Validator.isEmpty(data.username)) {
         errors.username = 'Username field is required';
     }
-    debugger
+   
     if (Validator.isEmpty(data.password)) {
         errors.password = 'Password field is required';
     }

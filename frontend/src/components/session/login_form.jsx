@@ -36,19 +36,15 @@ class LoginForm extends React.Component {
   }
 
   loginDemo(e) {
-    debugger
     e.preventDefault();
     const demoUser = {
       username: "demo_user",
       password: "password"
     }
-    debugger
     this.props.login(demoUser)
-    debugger
   }
 
   renderErrors() {
-    debugger
     return (
       <ul className="error-list">
         {this.props.errors.map((error, i) => (
@@ -65,7 +61,7 @@ class LoginForm extends React.Component {
   };
 
   render() {
-    debugger
+  
     return (
       <div className="main-login-div">
         <div className="login-div">
