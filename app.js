@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 const db = require("./config/keys").mongoURI;
 
 const users = require("./routes/api/users");
-const User = require("./models/User");
+const games = require("./routes/api/games");
+// const User = require("./models/User");
 const passport = require("passport");
 
 const bodyParser = require("body-parser");
@@ -24,6 +25,7 @@ mongoose
 
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
+app.use("/api/games", games);
 
 // seeding games route, only run once
 // const seeds = require("./seeds/seeds.json");
@@ -35,4 +37,5 @@ app.use("/api/users", users);
 // })
 
 const port = process.env.PORT || 5000;
+// debugger;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
