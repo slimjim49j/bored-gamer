@@ -15,7 +15,7 @@ class MainPage extends React.Component {
 
   render() {
     const { loggedIn, currentUser, games } = this.props;
-    debugger
+
     const display = loggedIn ? (
       <div>
         <p>Hello you are logged in {currentUser.username}</p>

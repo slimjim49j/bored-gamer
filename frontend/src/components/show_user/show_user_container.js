@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ShowGame from './show_game';
+import ShowUser from './show_user';
 
 const mapStateToProps = state => ({
   currentUser: state.session.user
@@ -9,4 +9,4 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowGame);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowUser);
