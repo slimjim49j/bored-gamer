@@ -24,6 +24,7 @@ class SignupForm extends React.Component {
 
     const user = Object.assign({}, this.state);
     this.props.signup(user)
+    this.props.login(user);
 
     this.setState({
       email: "",
