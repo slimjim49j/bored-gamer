@@ -8,6 +8,7 @@ const _emptyErrors = [];
 
 const SessionErrorsReducer = (state = _emptyErrors, action) => {
     Object.freeze(state);
+    debugger
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:
             return action.errors;
