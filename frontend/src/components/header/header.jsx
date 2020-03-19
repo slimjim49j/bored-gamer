@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import '../../assets/stylesheets/header.css'
+import '../../assets/stylesheets/header.css';
 
 class Header extends React.Component {
   render() {
-    const { currentUser, logout } = this.props;
+    const { loggedIn, currentUser, logout } = this.props;
 
-    const display = currentUser ? (
+    const display = loggedIn ? (
       <div className="logout-container">
         <p>welcome {currentUser.username}</p>
-        <button onClick={logout}></button>
+        <button onClick={logout}>Logout</button>
       </div>
     ) : (
       <div className="login-container">

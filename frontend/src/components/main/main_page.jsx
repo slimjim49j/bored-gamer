@@ -1,19 +1,37 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import '../../assets/stylesheets/main_page.css'
+// import { Link } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
+import '../../assets/stylesheets/main_page.css';
 
 class MainPage extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.viewGame = this.viewGame.bind(this);
+  }
+
+  viewGame(e) {
+    this.props.history.push(`/game/${e.currentTarget.id}`)
+  }
 
   render() {
+    const { loggedIn, currentUser, games } = this.props;
+
+    const display = loggedIn ? (
+      <div>
+        <p>Hello you are logged in {currentUser.username}</p>
+      </div>
+    ) : (
+      <div>
+        <p>Hello you are logged out</p>
+      </div>
+    )
+
     return(
       <div className="main-page-div">
-        <h1>hello</h1>
+        {display}
       </div>
     )
   }
 }
 
-export default withRouter(MainPage);
+export default MainPage;
