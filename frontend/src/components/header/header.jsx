@@ -4,10 +4,6 @@ import { withRouter } from 'react-router-dom';
 import '../../assets/stylesheets/header.css'
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { currentUser, logout } = this.props;
 
