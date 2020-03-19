@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import '../../assets/stylesheets/main_page.css'
 
 class MainPage extends React.Component {
   // constructor(props) {
