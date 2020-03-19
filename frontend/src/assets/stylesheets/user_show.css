@@ -1,0 +1,7 @@
+.main-user-show-div {
+  border: 1px solid red;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  top: 50px;
+}

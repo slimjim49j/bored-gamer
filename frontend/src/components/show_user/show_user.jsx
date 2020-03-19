@@ -5,6 +5,10 @@ class ShowUser extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.receiveUser(this.props.match.params.userId)
+  }
+
   render() {
     return (
       <div className="main-user-show-div">
@@ -13,3 +17,5 @@ class ShowUser extends React.Component {
     )
   }
 }
+
+export default ShowUser;

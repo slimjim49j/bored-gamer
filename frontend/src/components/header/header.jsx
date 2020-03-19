@@ -9,8 +9,8 @@ class Header extends React.Component {
 
     const display = loggedIn ? (
       <div className="logout-container">
-        <p>welcome {currentUser.username}</p>
-        <button onClick={logout}>Logout</button>
+        <p className="welcome-message">welcome {currentUser.username}</p>
+        <button className="logout-btn" onClick={logout}>logout</button>
       </div>
     ) : (
       <div className="login-container">
@@ -21,14 +21,14 @@ class Header extends React.Component {
 
     return (
       <div className="main-header-div">
-        <div className="header-right">
+        <div className="header-left">
           <p className="dice">⚁</p>
           <Link className="logo-text" to="/"> bored gamer </Link>
           <p className="dice">⚂</p>
           <div className="dice-container"></div>
         </div>
 
-        <div className="header-left">
+        <div className="header-right">
           {display}
         </div>
       </div>
