@@ -40,6 +40,7 @@ export const signup = user => dispatch => (
     ))
 );
 
+
 export const login = user => dispatch => {
     return(
         APIUtil.login(user)
@@ -55,6 +56,7 @@ export const login = user => dispatch => {
             })
     )
 }
+
 
 export const logout = () => dispatch => {
     localStorage.removeItem('jwtToken')
