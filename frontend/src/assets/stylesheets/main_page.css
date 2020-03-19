@@ -1,5 +1,8 @@
 .main-page-div {
+  position: relative;
+  top: 50px;
   border: 1px solid red;
+
   height: 600px;
   width: 300px;
 }

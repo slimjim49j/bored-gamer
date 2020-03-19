@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
+import { logout } from '../../actions/session_actions';
 import MainPage from './main_page';
-import { log_out } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
-  currentUser: state.entities.users[state.session.id]
+  loggedIn: state.session.isAuthenticated,
+  currentUser: state.session.user,
+  games: Object.values(state.entities.games)
 })
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(log_out())
+  logout: () => dispatch(logout())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
