@@ -20,7 +20,11 @@ class MechanicCheckBox extends React.Component {
         return(
             <div>
                 <ul>
-
+                    {this.state.mechanics.map((mechanic, i) => (
+                        <li key={`${i}`}>
+                            <p>{mechanic._id}</p>
+                        </li>
+                    ))}
                 </ul>
             </div>
         )

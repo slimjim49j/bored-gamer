@@ -20,7 +20,11 @@ class CategoryCheckBox extends React.Component {
         return(
             <div>
                 <ul>
-
+                    {this.state.categories.map((category, i) => (
+                        <li key={`${i}`}>
+                            <p>{category._id}</p>
+                        </li>
+                    ))}
                 </ul>
             </div>
         )
