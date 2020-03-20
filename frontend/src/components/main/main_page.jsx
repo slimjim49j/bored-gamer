@@ -3,6 +3,9 @@ import React from 'react';
 // import { withRouter } from 'react-router-dom';
 import '../../assets/stylesheets/main_page.css';
 
+import CategoryCheckBoxContainer from '../checkbox/category_checkbox_container';
+import MechanicCheckBoxContainer from '../checkbox/mechanic_checkbox_container';
+
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
@@ -37,7 +40,17 @@ class MainPage extends React.Component {
 
     return(
       <div className="main-page-div">
-        {display}
+        <div className="display-div">
+          {display}
+        </div>
+
+        <div className="categories-div">
+          {< CategoryCheckBoxContainer {...this.props} />}
+        </div>
+
+        <div className="mechanics-div">
+          {< MechanicCheckBoxContainer {...this.props} />}
+        </div>
       </div>
     )
   }
