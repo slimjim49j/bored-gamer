@@ -9,7 +9,7 @@ class Header extends React.Component {
 
     const display = loggedIn ? (
       <div className="logout-container">
-        <p className="welcome-message">welcome {currentUser.username}</p>
+        <p className="welcome-message">{currentUser.username}</p>
         <button className="logout-btn" onClick={logout}>logout</button>
       </div>
     ) : (

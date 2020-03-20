@@ -1,7 +1,7 @@
 .main-page-div {
   font-family: 'Sen', sans-serif;
-  position: inherit;
-  top: 50px;
+  /* position: inherit; */
+  /* top: 50px; */
   /* border: 1px solid red; */
   height: 100%;
   width: 100vw;
@@ -12,12 +12,14 @@
 .splash-page {
  background-color: rgb(0, 36, 26);
  height: 100vh;
+ min-width: 550px;
 }
 
 .splash-image-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
   background-image: url("../images/wild.jpg");
   width: 100vw;
   min-width: 550px;
@@ -38,13 +40,36 @@
   padding: 20px 60px;
   color: white;
   opacity: 90%;
+  min-width: 390px;
 }
 
 /* LOGGED IN */
 
 .logged-in-main {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  background-color: rgb(0, 22, 54);
   margin-top: 50px;
-  height: 100px;
   width: 100vw;
+  height: 100vh;
+
+}
+
+/* .main-image-container {
+  display: inline-block;
+  background-image: url("../images/space.jpg");
+  background-size: 1500px 2250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  width: 100vw;
+  min-width: 550px;
+  height: 50vh;
+  background-position: 0px -300px;
+} */
+
+.games-index-container {
+  padding-top: 50px;
+  padding-left: 20px;
+  color: white;
 }
