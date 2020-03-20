@@ -94,7 +94,7 @@
   /* border: 1px solid red; */
   border-radius: 4px;
   padding: 20px;
-  background-color: black;
+  background-color: rgb(0, 0, 0, 0.5);
   overflow: scroll;
   width: 250px;
   height: 300px;
@@ -104,7 +104,7 @@
   /* border: 1px solid red; */
   border-radius: 4px;
   padding: 20px;
-  background-color: black;
+  background-color: rgb(0, 0, 0, 0.5);
   overflow: scroll;
   width: 250px;
   height: 300px;
