@@ -3,12 +3,12 @@ import ShowUser from './show_user';
 import { receiveCurrentUser } from '../../actions/session_actions';
 
 
-const mapStateToProps = state => ({
-  currentUser: state.session.user
+const mapStateToProps = (state) => ({
+  user: state.session.user
 })
 
-const mapDispatchToProps = dispatch => ({
-  receiveUser: (currentUser) => dispatch(receiveCurrentUser(currentUser))
-})
+// const mapDispatchToProps = dispatch => ({
+//   receiveUser: (currentUser) => dispatch(receiveCurrentUser(currentUser))
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowUser);
+export default connect(mapStateToProps, null)(ShowUser);

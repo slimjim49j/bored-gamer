@@ -1,7 +1,27 @@
 .main-user-show-div {
-  border: 1px solid red;
-  position: relative;
-  width: 200px;
-  height: 200px;
+  /* border: 1px solid red; */
+  font-family: 'Sen', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(0, 36, 26);
+  color: white;
+  margin-top: 50px;
+  width: 100vw;
+  height: 100vh;
   top: 50px;
+}
+
+.user-profile-message {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  width: 70vw;
+  height: 50px;
+}
+
+.user-profile-message > p {
+  font-size: 40px;
 }
