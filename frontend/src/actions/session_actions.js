@@ -14,8 +14,6 @@ export const receiveCurrentUser = currentUser => {
     })
 };
 
-
-
 export const receiveErrors = (errors) => ({
     type: RECEIVE_SESSION_ERRORS,
     errors: errors
