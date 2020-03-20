@@ -1,6 +1,7 @@
 .main-page-div {
   font-family: 'Sen', sans-serif;
   display: flex;
+  flex-direction: column;
   /* border: 1px solid red; */
   height: 100vh;
   width: 100vw;
@@ -30,14 +31,6 @@
   /* z-index: 10; */
 }
 
-.splash-title {
-  /* border: 1px solid red; */
-  font-size: 70px;
-  font-weight: 700;
-  color: white;
-  opacity: 80%;
-}
-
 .splash-text-container {
   padding: 20px 60px;
   color: white;
@@ -57,7 +50,7 @@
   height: 100vh;
 }
 
-/* .main-image-container {
+.main-image-container {
   display: inline-block;
   background-image: url("../images/space.jpg");
   background-size: 1500px 2250px;
@@ -69,7 +62,22 @@
   min-width: 550px;
   height: 50vh;
   background-position: 0px -300px;
-} */
+}
+
+.splash-title {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50vh;
+  margin-top: 50px;
+  font-size: 70px;
+  font-weight: 700;
+  color: white;
+  opacity: 80%;
+  z-index: -1;
+}
 
 .games-index-container {
   /* border: 1px solid blue; */
@@ -78,7 +86,7 @@
   align-items: center;
   width: 100vw;
   height: 500px;
-  padding-top: 500px;
+  padding: 50px 0px 100px;
   color: white;
 }
 

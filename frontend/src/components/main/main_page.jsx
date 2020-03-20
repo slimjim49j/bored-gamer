@@ -30,7 +30,7 @@ class MainPage extends React.Component {
       <div className="splash-page">
         {/* <p>Hello you are logged out</p> */}
         <div className="splash-image-container">
-          <p className="splash-title">bored gamer</p>
+          
         </div>
         <div className="splash-text-container">
           
@@ -42,19 +42,22 @@ class MainPage extends React.Component {
       <div className="main-page-div">
         <div className="display-div">
           {display}
+          <p className="splash-title">bored gamer</p>
         </div>
 
         <div className="games-index-container">
           <div className="display-text">
-            <p>Blah blah blah choose some things and get a game yay whatever</p>
+            <p>Blah blah blah choose some things and get a game yay</p>
           </div>
 
           <div className="scroll-containers">
             <div className="categories-div">
+              <p className="checkbox-title">Categories</p>
               {< CategoryCheckBoxContainer {...this.props} />}
             </div>
 
             <div className="mechanics-div">
+              <p className="checkbox-title">Mechanics</p>
               {< MechanicCheckBoxContainer {...this.props} />}
             </div>
           </div>

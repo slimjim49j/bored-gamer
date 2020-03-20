@@ -9,6 +9,7 @@
   padding-right: 2px;
   height: 50px;
   background-color: rgb(20, 20, 20);
+  z-index: 1;
 }
 
 .header-left {

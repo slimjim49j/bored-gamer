@@ -17,3 +17,11 @@
 .checkbox-input:active {
   background-color: darkblue;
 }
+
+.checkbox-title {
+  /* border: 1px solid red; */
+  font-size: 24px;
+  padding-bottom: 15px;
+  padding-left: 65px;
+  width: 80%;
+}
