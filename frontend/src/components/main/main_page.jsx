@@ -45,7 +45,7 @@ class MainPage extends React.Component {
           <p className="splash-title">bored gamer</p>
         </div>
 
-        <div className="games-index-container">
+        <div className="games-checkbox-container">
           <div className="display-text">
             <p>Blah blah blah choose some things and get a game yay</p>
           </div>
@@ -60,9 +60,14 @@ class MainPage extends React.Component {
               <p className="checkbox-title">Mechanics</p>
               {< MechanicCheckBoxContainer {...this.props} />}
             </div>
+
+          </div>
+
+          <div className="games-container">
+            <p>SHOW GAMES HERE</p>
           </div>
         </div>
-        {/* <p>All artwork done by Brian Miller</p> */}
+        <p className="artwork-cred">All artwork done by Brian Miller</p>
       </div>
     )
   }
