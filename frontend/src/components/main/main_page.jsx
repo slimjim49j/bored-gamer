@@ -17,12 +17,21 @@ class MainPage extends React.Component {
     const { loggedIn, currentUser, games } = this.props;
 
     const display = loggedIn ? (
-      <div>
+      <div className="logged-in-main">
         <p>Hello you are logged in {currentUser.username}</p>
       </div>
     ) : (
-      <div>
-        <p>Hello you are logged out</p>
+      <div className="splash-page">
+        {/* <p>Hello you are logged out</p> */}
+        <div className="splash-image-container">
+          <p className="splash-title">bored gamer</p>
+        </div>
+        <div className="splash-text-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+              aliquip ex ea commodo consequat.</p>
+        </div>
       </div>
     )
 
