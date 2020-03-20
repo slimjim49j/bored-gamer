@@ -1,0 +1,19 @@
+.checkbox-label {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 0;
+}
+
+.checkbox-li:hover {
+  background-color: rgb(34, 34, 34);
+  /* opacity: 70%; */
+}
+
+.checkbox-input {
+  cursor: pointer;
+}
+
+.checkbox-input:active {
+  background-color: darkblue;
+}
