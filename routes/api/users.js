@@ -98,4 +98,19 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     });
 })
 
+router.get("/:userId", (req, res) => {
+  User.findOne({ _id: req.params.userId }).then(user => {
+    if (user) {
+        return res.json({
+            _id: user._id,
+            username: user.username,
+            email: user.email,
+            date: user.date,
+        });
+    } else {
+        return res.status(422).json({ user: "This user does not exist" });
+    }
+  });
+});
+
 module.exports = router;
