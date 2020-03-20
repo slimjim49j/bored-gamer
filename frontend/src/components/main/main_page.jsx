@@ -56,7 +56,7 @@ class MainPage extends React.Component {
         <div className="categories-div">
           {< CategoryCheckBoxContainer {...this.props} />}
         </div>
-
+        <p>-----------</p>
         <div className="mechanics-div">
           {< MechanicCheckBoxContainer {...this.props} />}
         </div>

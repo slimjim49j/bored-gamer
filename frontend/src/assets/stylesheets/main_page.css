@@ -1,5 +1,6 @@
 .main-page-div {
   font-family: 'Sen', sans-serif;
+  display: flex;
   /* position: inherit; */
   /* top: 50px; */
   /* border: 1px solid red; */
@@ -10,9 +11,12 @@
 /* LOGGED OUT */
 
 .splash-page {
- background-color: rgb(0, 36, 26);
- height: 100vh;
- min-width: 550px;
+  position: fixed;
+  z-index: -1;
+  top: 50px;
+  background-color: rgb(0, 36, 26);
+  height: 100vh;
+  min-width: 550px;
 }
 
 .splash-image-container {
@@ -47,11 +51,12 @@
 
 .logged-in-main {
   /* border: 1px solid red; */
+  position: fixed;
+  z-index: -1;
   background-color: rgb(0, 22, 54);
   margin-top: 50px;
   width: 100vw;
   height: 100vh;
-
 }
 
 /* .main-image-container {
@@ -73,3 +78,4 @@
   padding-left: 20px;
   color: white;
 }
+
