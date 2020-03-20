@@ -9,7 +9,7 @@ class Header extends React.Component {
 
     const display = loggedIn ? (
       <div className="logout-container">
-        <p className="welcome-message">{currentUser.username}</p>
+        <Link className="username-btn" to={`/users/${currentUser.id}`}>{currentUser.username}</Link>
         <button className="logout-btn" onClick={logout}>logout</button>
       </div>
     ) : (
