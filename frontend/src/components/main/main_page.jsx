@@ -18,7 +18,14 @@ class MainPage extends React.Component {
 
     const display = loggedIn ? (
       <div className="logged-in-main">
-        <p>Hello you are logged in {currentUser.username}</p>
+        {/* <p>Hello you are logged in {currentUser.username}</p> */}
+        <div className="main-image-container"></div>
+
+        <div className="games-index-container">
+          <p>LOTS OF GAMES WILL BE HERE????</p>
+          <p>GAMES</p>
+          <p>GAMES</p>
+        </div>
       </div>
     ) : (
       <div className="splash-page">
@@ -31,6 +38,8 @@ class MainPage extends React.Component {
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
               ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
               aliquip ex ea commodo consequat.</p>
+              <br/>
+              <p>All artwork done by Brian Miller</p>
         </div>
       </div>
     )
