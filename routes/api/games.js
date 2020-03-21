@@ -63,7 +63,7 @@ router.get("/index/:pageId", (req, res) => {
         };
     }
 
-    const resultsPerPage = req.query.gameNum || 50;
+    const resultsPerPage = +req.query.gameNum || 50;
     const page = req.body.id || 1;
     // const categories = (req.query.categories.split(" ")) || [];
     // const mechanics = req.body.mechanics || [];
