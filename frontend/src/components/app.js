@@ -10,8 +10,6 @@ import SignupFormContainer from './session/signup_container';
 import ShowGameContainer from './show_game/show_game_container';
 import ShowUserContainer from './show_user/show_user_container';
 
-import GameIndexContainer from './game_index/game_index_container';
-
 const App = () => (
     <div>
         <Route path="/" component={HeaderContainer} />
@@ -23,8 +21,6 @@ const App = () => (
             <ProtectedRoute path="/game" component={ShowGameContainer} />
             <ProtectedRoute path="/users/:userId" component={ShowUserContainer} />
             <Route exact path="/" component={MainPage} />
-
-            <Route exact path='/gip' component={GameIndexContainer} />
         </Switch>
     </div>
 

@@ -74,7 +74,8 @@ class GameIndex extends React.Component {
                 <br/>
                 {games.map((game, i) => (
                     <li key={`${i}`}>
-                        <label className='TESTER_LABEL_DELETE_THIS' >{game.title}
+                        <label>{game.title}
+                        
                         </label>
                     </li>
                 ))}
