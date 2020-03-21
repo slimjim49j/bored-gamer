@@ -23,8 +23,6 @@ const App = () => (
             <Route exact path="/" component={MainPage} />
         </Switch>
     </div>
-
-    
 );
 
 export default App;
