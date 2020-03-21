@@ -9,7 +9,7 @@ router.get('/categories', (req, res) => {
         {
             $group:
             {
-                _id: "$categories.category",
+                _id: "$categories",
                 total: { $sum: 1 }
             }
         },
@@ -29,7 +29,7 @@ router.get('/mechanics', (req, res) => {
         {
             $group:
             {
-                _id: "$mechanics.mechanic",
+                _id: "$mechanics",
                 total: { $sum: 1 }
             }
         },
