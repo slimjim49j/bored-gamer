@@ -9,12 +9,22 @@ class ShowUser extends React.Component {
   render() {
     return (
       <div className="main-user-show-div">
-        <div className="user-profile-message">
-          <p>Hello {this.props.user.username}</p>
-        </div>
+        <div className="user-show-background"></div>
 
-        <div>
-          <p>Liked Games Here?</p>
+        <div className="user-contents">
+          <div className="user-profile-message">
+            <p>Hello {this.props.user.username}</p>
+          </div>
+
+          <div className="user-games">
+            {/* clicking on game will lead to game show page */}
+            <div>HERE IS GAME</div>
+            <div>HERE IS GAME</div>
+            <div>HERE IS GAME</div>
+            <div>HERE IS GAME</div>
+            <div>HERE IS GAME</div>
+            <div>HERE IS GAME</div>
+          </div>
         </div>
       </div>
     )
