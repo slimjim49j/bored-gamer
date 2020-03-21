@@ -2,11 +2,37 @@ import React from 'react';
 import '../../assets/stylesheets/game_show.css'
 
 class ShowGame extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state ={
+      likability:"",
+      notes:""
+    }
+  }
+
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   const game = Object.assign({}, this.state);
+  //   this.props.saveGame(game)
+  //   this.setState({
+  //     likability: "",
+  //     notes: ""
+  //   })
+  // }
+
+  // update(field) {
+  //   return e => this.setState({
+  //     [field]: e.currentTarget.value
+  //   })
+  // }
 
   render() {
 
     return(
       <div className="main-game-show-div">
+        <div className="game-show-background"></div>
+
+        <div className="game-contents">
         <p className="game-title">HELLO THIS IS A SINGLE GAME TITLE</p>
           <div className="game-image">
             <p>game image will be here</p>
@@ -30,21 +56,26 @@ class ShowGame extends React.Component {
             <p>Did you and your friends enjoy the game?</p>
             <div>
               <label> <span role="img" aria-label="like">👍🏼</span>
-                <input type="radio" name="select" value="like"/>
+                <input type="radio" name="likability" value="like"/>
               </label>
 
             <label> <span role="img" aria-label="like">👎🏼</span>
-                <input type="radio" name="select" value="dislike"/>
+                <input type="radio" name="likability" value="dislike"/>
               </label>
             </div>
 
            <label>
-              <textarea name="game_notes" cols="50" rows="10"></textarea>
+              <textarea 
+                name="game_notes"
+                placeholder="additional notes" 
+                cols="50" 
+                rows="5"></textarea>
            </label>
 
-           <input type="submit" value="save game"/>
-
+           <input className="save-game-btn" type="submit" value="save"/>
+            {/* submit button currently doesn't have any functionality. Will need to update later */}
           </form>
+        </div>
       </div>
     )
   }
