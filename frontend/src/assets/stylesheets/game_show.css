@@ -1,0 +1,44 @@
+.main-game-show-div {
+  /* border: 1px solid red; */
+  font-family: 'Sen', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 36, 26);
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  top: 50px;
+}
+
+.game-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.game-image {
+  border: 1px solid red;
+  margin: 15px;
+  width: 300px;
+  height: 300px;
+}
+
+.game-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-description > label {
+  padding: 2px 0;
+}
+
+.game-form {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  resize: none;
+}
