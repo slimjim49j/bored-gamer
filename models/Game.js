@@ -18,8 +18,8 @@ const GameSchema = new Schema({
     avgTime: Number, 
     avgRating: Number, 
 
-    mechanics: [Mechanic], 
-    categories: [Category], 
+    mechanics: [String], 
+    categories: [String], 
 
     year: Number, 
     imageUrl: String,
