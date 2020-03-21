@@ -29,6 +29,8 @@ const App = () => (
             {/* <Route exact path='/def' component={MechanicCheckBoxContainer} /> */}
         </Switch>
     </div>
+
+    
 );
 
 export default App;
