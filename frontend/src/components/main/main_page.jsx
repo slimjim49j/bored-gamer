@@ -65,6 +65,7 @@ class MainPage extends React.Component {
 
           <div className="games-container">
             <p>SHOW GAMES HERE</p>
+            
           </div>
         </div>
         <p className="artwork-cred">All artwork done by Brian Miller</p>
