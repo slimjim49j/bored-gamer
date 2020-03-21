@@ -10,9 +10,7 @@ import SignupFormContainer from './session/signup_container';
 import ShowGameContainer from './show_game/show_game_container';
 import ShowUserContainer from './show_user/show_user_container';
 
-
-// import CategoryCheckBoxContainer from './checkbox/category_checkbox_container';
-// import MechanicCheckBoxContainer from './checkbox/mechanic_checkbox_container';
+import GameIndexContainer from './game_index/game_index_container';
 
 const App = () => (
     <div>
@@ -26,11 +24,11 @@ const App = () => (
             <ProtectedRoute path="/users/:userId" component={ShowUserContainer} />
             <Route exact path="/" component={MainPage} />
 
-            {/* import Category and Mechanic directly into MainPage component soon */}
-            {/* <Route exact path='/abc' component={CategoryCheckBoxContainer} /> */}
-            {/* <Route exact path='/def' component={MechanicCheckBoxContainer} /> */}
+            <Route exact path='/gip' component={GameIndexContainer} />
         </Switch>
     </div>
+
+    
 );
 
 export default App;
