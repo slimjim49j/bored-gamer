@@ -6,6 +6,8 @@ import '../../assets/stylesheets/main_page.css';
 import CategoryCheckBoxContainer from '../checkbox/category_checkbox_container';
 import MechanicCheckBoxContainer from '../checkbox/mechanic_checkbox_container';
 
+import GameIndexContainer from '../game_index/game_index_container';
+
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
@@ -64,8 +66,8 @@ class MainPage extends React.Component {
           </div>
 
           <div className="games-container">
-            <p>SHOW GAMES HERE</p>
-            
+            {/* <p>SHOW GAMES HERE</p> */}
+            {< GameIndexContainer {...this.props} />}
           </div>
         </div>
         <p className="artwork-cred">All artwork done by Brian Miller</p>

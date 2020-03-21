@@ -1,7 +1,7 @@
 import React from "react";
-import { render } from "react-dom";
-// import request from "superagent";
 import debounce from "lodash.debounce";
+
+import "../../assets/stylesheets/game_index.css";
 
 
 class GameIndex extends React.Component {
@@ -30,7 +30,7 @@ class GameIndex extends React.Component {
 
             if (
                 window.innerHeight + document.documentElement.scrollTop
-                === document.documentElement.offsetHeight
+                >= document.documentElement.offsetHeight
             ) {
                 loadUsers();
             }
@@ -46,7 +46,7 @@ class GameIndex extends React.Component {
             this.props.getGames(this.state.pageNum)
                 .then((games) => {
                     this.setState({
-                        games, 
+                        games: [...this.state.games, ...games.data], 
                         isLoading: false
                     })
                 })
@@ -61,18 +61,21 @@ class GameIndex extends React.Component {
 
     render() {
         const {
-            error, 
-            hasMore, 
-            isLoading, 
             games
         } = this.state;
 
+        console.log(this.state);
+
         return (
             <div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                 {games.map((game, i) => (
                     <li key={`${i}`}>
-                        <label>{games.title}
-                            {console.log(game)}
+                        <label>{game.title}
+                        
                         </label>
                     </li>
                 ))}
