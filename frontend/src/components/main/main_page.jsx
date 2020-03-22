@@ -11,12 +11,12 @@ import GameIndexContainer from '../game_index/game_index_container';
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
-    this.viewGame = this.viewGame.bind(this);
+    // this.viewGame = this.viewGame.bind(this);
   }
 
-  viewGame(e) {
-    this.props.history.push(`/game/${e.currentTarget.id}`)
-  }
+  // viewGame(e) {
+  //   this.props.history.push(`/game/${e.currentTarget.id}`)
+  // }
 
   render() {
     const { loggedIn, currentUser, games } = this.props;

@@ -1,6 +1,6 @@
 import React from "react";
 import debounce from "lodash.debounce";
-
+import { Link } from 'react-router-dom'
 import "../../assets/stylesheets/game_index.css";
 
 
@@ -36,7 +36,6 @@ class GameIndex extends React.Component {
             }
         }, 100);
 
-        // this.viewGame = this.viewGame.bind(this);
     };
 
     componentDidMount() {
@@ -63,7 +62,8 @@ class GameIndex extends React.Component {
     }
 
     // viewGame(e) {
-    //     this.props.history.push(`/games/${e.currentTarget._id}`)
+    //     debugger
+    //     this.props.history.push(`/games/${e.currentTarget.gameId}`)
     // }
 
     render() {
@@ -76,15 +76,16 @@ class GameIndex extends React.Component {
         return (
             <div className="main-game-index-div">
                 {games.map((game, i) => (
-                    <li 
-                        key={`${i}`}
-                        className="games-li"
-                        // onClick={this.viewGame}
-                        >
-                            <img src={game.imageUrl} className="game-image-index" alt="game-image"/>
-                            <label>{game.title}</label>
- 
-                    </li>
+                    <ul>
+                        <Link to={`/games/${game._id}`}
+                            key={`${i}`}
+                            className="games-li"
+                            >
+                                <img src={game.imageUrl} className="game-image-index" alt="game-image"/>
+                                <label>{game.title}</label>
+    
+                        </Link>
+                    </ul>
                 ))}
             </div>
         )
