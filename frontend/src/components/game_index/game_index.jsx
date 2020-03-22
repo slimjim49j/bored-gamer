@@ -35,6 +35,8 @@ class GameIndex extends React.Component {
                 loadUsers();
             }
         }, 100);
+
+        // this.viewGame = this.viewGame.bind(this);
     };
 
     componentDidMount() {
@@ -60,6 +62,10 @@ class GameIndex extends React.Component {
         })
     }
 
+    // viewGame(e) {
+    //     this.props.history.push(`/games/${e.currentTarget._id}`)
+    // }
+
     render() {
         const {
             games
@@ -68,16 +74,16 @@ class GameIndex extends React.Component {
         console.log(this.state);
 
         return (
-            <div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+            <div className="main-game-index-div">
                 {games.map((game, i) => (
-                    <li key={`${i}`}>
-                        <label>{game.title}
-                        
-                        </label>
+                    <li 
+                        key={`${i}`}
+                        className="games-li"
+                        // onClick={this.viewGame}
+                        >
+                            <img src={game.imageUrl} className="game-image-index" alt="game-image"/>
+                            <label>{game.title}</label>
+ 
                     </li>
                 ))}
             </div>
