@@ -12,17 +12,31 @@
   display: flex;
 }
 
-.games-li {
-  border: 1px solid white;
+.games-list {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  margin: 20px 10px;
   opacity: 80%;
+  transition-duration: 0.5s;
+}
+
+.games-list:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.games-li {
+  /* border: 2px solid white; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   width: 250px;
   height: 250px;
   margin: 20px 10px;
-}
-
-.games-li:hover {
-  opacity: 100%;
-  cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
 
 li {
@@ -32,4 +46,9 @@ li {
 .game-image-index {
   width: 250px;
   height: 250px;
+  margin: 5px 0;
+}
+
+.game-index-title:hover {
+  cursor: pointer;
 }

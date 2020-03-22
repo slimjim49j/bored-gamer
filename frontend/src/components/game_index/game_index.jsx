@@ -61,28 +61,19 @@ class GameIndex extends React.Component {
         })
     }
 
-    // viewGame(e) {
-    //     debugger
-    //     this.props.history.push(`/games/${e.currentTarget.gameId}`)
-    // }
-
     render() {
-        const {
-            games
-        } = this.state;
-
-        console.log(this.state);
+        const { games } = this.state;
 
         return (
             <div className="main-game-index-div">
                 {games.map((game, i) => (
-                    <ul>
+                    <ul className="games-list">
                         <Link to={`/games/${game._id}`}
                             key={`${i}`}
                             className="games-li"
                             >
                                 <img src={game.imageUrl} className="game-image-index" alt="game-image"/>
-                                <label>{game.title}</label>
+                                <label className="game-index-title">{game.title}</label>
     
                         </Link>
                     </ul>
