@@ -24,15 +24,19 @@ class MainPage extends React.Component {
       e.target.tagName.toLowerCase() === "input" &&
       e.target.type === "checkbox"
     ) {
-      const categories = document
-        .querySelectorAll(".categories-div input[type=checkbox]:checked")
+      const categories = 
+      Array.from(document
+        .querySelectorAll(".categories-div input[type=checkbox]:checked"))
         .map(el => el.value);
-      const mechanics = document
-        .querySelectorAll(".mechanics-div input[type=checkbox]:checked")
+      const mechanics = 
+      Array.from(document
+        .querySelectorAll(".mechanics-div input[type=checkbox]:checked"))
         .map(el => el.value);
       // this.props.rese
     }
-  }
+
+    
+  };
 
   render() {
     const { loggedIn, currentUser, games } = this.props;
@@ -62,7 +66,8 @@ class MainPage extends React.Component {
             <p>Blah blah blah choose some things and get a game yay</p>
           </div>
 
-          <div className="scroll-containers" onClick={handleCheckboxClick}>
+          <div className="scroll-containers" onClick={this.handleCheckboxClick}>
+            {/* onClick={this.handleCheckboxClick} */}
             <div className="categories-div">
               <p className="checkbox-title">Categories</p>
               {<CategoryCheckBoxContainer {...this.props} />}

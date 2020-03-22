@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+import { resetPageNum } from "../../actions/session_actions";
+
 import MainPage from './main_page';
-import { resetPageNum } from "..//../actions/session_actions";
 
 const mapStateToProps = state => ({
   loggedIn: state.session.isAuthenticated,
@@ -11,6 +12,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   resetPageNum: () => dispatch(resetPageNum()),
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
