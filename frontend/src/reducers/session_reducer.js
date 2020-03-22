@@ -12,6 +12,7 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
+    let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             return {
@@ -22,11 +23,9 @@ export default function (state = initialState, action) {
         case RECEIVE_USER_LOGOUT:
             return initialState;
         case INCREMENT_PAGE_NUM:
-            let nextState = Object.assign({}, state);
             nextState.pageNum += 1;
             return nextState;
         case RESET_PAGE_NUM:
-            let nextState = Object.assign({}, state);
             nextState.pageNum = 0;
             return nextState;
         default:
