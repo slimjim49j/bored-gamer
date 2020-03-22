@@ -14,13 +14,13 @@ const receiveGames = games => ({
 });
 
 export const getInitialGames = (pageNum, categories, mechanics) => dispatch => (
-    GameUtil.GameIndexUtil.getGames(pageNum, categories, mechanics)
+    GameIndexUtil.getGames(pageNum, categories, mechanics)
         .then(games => dispatch(replaceAllGames(games)))
         .catch(err => console.log(err))
 );
 
 export const getMoreGames = (pageNum, categories, mechanics) => dispatch => (
-    GameUtil.GameIndexUtil.getGames(pageNum, categories, mechanics)
+    GameIndexUtil.getGames(pageNum, categories, mechanics)
         .then(games => dispatch(receiveGames(games)))
         .catch(err => console.log(err))
 );
