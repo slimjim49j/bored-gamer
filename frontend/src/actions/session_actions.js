@@ -6,6 +6,8 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 
+export const RESET_PAGE_NUM = "RESET_PAGE_NUM";
+export const INCREMENT_PAGE_NUM = "INCREMENT_PAGE_NUM";
 
 export const receiveCurrentUser = currentUser => {
     return({
@@ -26,6 +28,14 @@ export const removeSessionErrors = () => ({
 
 export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
+});
+
+export const resetPageNum = () => ({
+    type: RESET_PAGE_NUM,
+});
+
+export const incrementPageNum = () => ({
+    type: INCREMENT_PAGE_NUM,
 });
 
 export const signup = currentUser => dispatch => (
