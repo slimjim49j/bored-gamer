@@ -67,9 +67,8 @@ class GameIndex extends React.Component {
         return (
             <div className="main-game-index-div">
                 {games.map((game, i) => (
-                    <ul className="games-list">
+                    <ul className="games-list" key={`${i}`}>
                         <Link to={`/games/${game._id}`}
-                            key={`${i}`}
                             className="games-li"
                             >
                                 <img src={game.imageUrl} className="game-image-index" alt="game-image"/>
