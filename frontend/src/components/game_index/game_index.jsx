@@ -42,8 +42,9 @@ class GameIndex extends React.Component {
     };
 
     loadUsers = () => {
-        this.setState({ isLoading: true, pageNum: this.state.pageNum + 1 }, () => {
-            this.props.getGames(this.state.pageNum)
+        this.props.incrementPageNum();
+        this.setState({ isLoading: true }, () => {
+            this.props.getGames(this.props.pageNum)
                 .then((games) => {
                     this.setState({
                         games: [...this.state.games, ...games.data], 
