@@ -9,3 +9,7 @@ export const getGames = (pageNum, categories=[], mechanics=[]) => {
         }
     })
 };
+
+export const getOneGame = (gameId) => {
+    return axios.get(`/api/games/${gameId}`)
+}
