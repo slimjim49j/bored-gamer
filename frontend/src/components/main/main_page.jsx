@@ -66,11 +66,11 @@ class MainPage extends React.Component {
           </div>
 
           <div className="games-container">
-            {/* <p>SHOW GAMES HERE</p> */}
+            {/* <p>Available Games</p> */}
             {< GameIndexContainer {...this.props} />}
           </div>
         </div>
-        <p className="artwork-cred">All artwork done by Brian Miller</p>
+        {/* <p className="artwork-cred">All artwork done by Brian Miller</p> */}
       </div>
     )
   }

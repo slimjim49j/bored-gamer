@@ -1,0 +1,35 @@
+.games-container {
+  /* border: 1px solid red; */
+  width: 80vw;
+  margin: 20px 0;
+}
+
+.main-game-index-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* border: 1px solid blue; */
+  display: flex;
+}
+
+.games-li {
+  border: 1px solid white;
+  opacity: 80%;
+  width: 250px;
+  height: 250px;
+  margin: 20px 10px;
+}
+
+.games-li:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.game-image-index {
+  width: 250px;
+  height: 250px;
+}
