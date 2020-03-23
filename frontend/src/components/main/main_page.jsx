@@ -36,7 +36,7 @@ class MainPage extends React.Component {
   };
 
   render() {
-    const { loggedIn, currentUser, games } = this.props;
+    const { loggedIn } = this.props;
 
     const display = loggedIn ? (
       <div className="logged-in-main">
@@ -72,7 +72,6 @@ class MainPage extends React.Component {
               {<MechanicCheckBoxContainer {...this.props} />}
             </div>
           </div>
-
           <div className="games-container">
             {<GameIndexContainer {...this.props} />}
           </div>

@@ -1,19 +1,16 @@
 .games-container {
-  /* border: 1px solid red; */
   width: 80vw;
   margin: 20px 0;
 }
 
-.main-game-index-div {
+.all-games {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* border: 1px solid blue; */
   display: flex;
 }
 
 .games-list {
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   margin: 20px 10px;
@@ -27,7 +24,6 @@
 }
 
 .games-li {
-  /* border: 2px solid white; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +40,6 @@ li {
 }
 
 .game-image-index {
-  /* border: 1px solid red; */
   width: 200px;
   height: 200px;
   object-fit: fill;
@@ -53,4 +48,10 @@ li {
 
 .game-index-title:hover {
   cursor: pointer;
+}
+
+.game-count {
+  display: flex;
+  justify-content: center;
+  height: 20px;
 }
