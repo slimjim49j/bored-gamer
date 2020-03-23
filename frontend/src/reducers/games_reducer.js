@@ -5,7 +5,6 @@ import {
 
 export default function (state = [], action) {
     Object.freeze(state);
-    // deep clone?
     let nextState = Object.assign([], state);
 
     switch(action.type) {

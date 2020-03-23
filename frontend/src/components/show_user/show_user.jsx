@@ -4,7 +4,7 @@ import '../../assets/stylesheets/user_show.css'
 class ShowUser extends React.Component {
   constructor(props) {
     super(props)
-  }
+  };
 
   render() {
     return (
@@ -28,7 +28,7 @@ class ShowUser extends React.Component {
         </div>
       </div>
     )
-  }
-}
+  };
+};
 
 export default ShowUser;

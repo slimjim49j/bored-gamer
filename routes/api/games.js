@@ -65,12 +65,7 @@ router.get("/index/:pageId", (req, res) => {
 
     const resultsPerPage = +req.query.gameNum || 50;
     const page = req.params.pageId || 1;
-    // const categories = (req.query.categories.split(" ")) || [];
-    // const mechanics = req.body.mechanics || [];
- 
-    // const categories = ["Fantasy"];
-    // const mechanics = ["Deck / Pool Building"];
-      
+
     Game.find(findParams)
     .skip(resultsPerPage * page - resultsPerPage)
     .limit(resultsPerPage)
