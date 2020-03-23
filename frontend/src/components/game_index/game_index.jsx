@@ -40,8 +40,8 @@ class GameIndex extends React.Component {
     };
 
     componentDidMount() {
-        // debugger
-        this.props.resetPageNum();
+        // this.props.resetPageNum();
+        // debugger;
         this.loadGames();
     };
 
