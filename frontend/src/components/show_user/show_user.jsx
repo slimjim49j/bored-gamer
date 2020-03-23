@@ -2,9 +2,9 @@ import React from 'react';
 import '../../assets/stylesheets/user_show.css'
 
 class ShowUser extends React.Component {
-  constructor(props) {
-    super(props)
-  };
+  // constructor(props) {
+  //   super(props)
+  // }
 
   render() {
     return (
