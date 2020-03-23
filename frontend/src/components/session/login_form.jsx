@@ -11,11 +11,11 @@ class LoginForm extends React.Component {
       username: "",
       password: "",
       errors: {}
-    }
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginDemo = this.loginDemo.bind(this);
-  }
+  };
 
   handleSubmit(e) {
     e.preventDefault();
@@ -26,14 +26,14 @@ class LoginForm extends React.Component {
     this.setState({
       username: "",
       password: ""
-    })
-  }
+    });
+  };
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
-    })
-  }
+    });
+  };
 
   loginDemo(e) {
     e.preventDefault();
@@ -42,7 +42,7 @@ class LoginForm extends React.Component {
       password: "password"
     }
     this.props.login(demoUser)
-  }
+  };
 
   renderErrors() {
     return (
@@ -54,14 +54,13 @@ class LoginForm extends React.Component {
         ))}
       </ul>
     )
-  }
+  };
 
   componentWillUnmount() {
     this.props.removeErrors();
   };
 
   render() {
-  
     return (
       <div className="main-login-div">
         <div className="login-div">
@@ -102,7 +101,6 @@ class LoginForm extends React.Component {
           </div>
           
           <div className="login-image-container">
-            {/* <img src="frontend/src/assets/images/space-expl.jpg"/> */}
           </div>
 
 
@@ -110,7 +108,7 @@ class LoginForm extends React.Component {
         </div>
       </div>
     )
-  }
-}
+  };
+};
 
 export default withRouter(LoginForm);

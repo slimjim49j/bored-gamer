@@ -17,7 +17,7 @@ class SignupForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  };
 
   handleSubmit(e) {
     e.preventDefault();
@@ -32,13 +32,13 @@ class SignupForm extends React.Component {
       password: "",
       password2: "",
     })
-  }
+  };
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     })
-  }
+  };
 
   renderErrors() {
     return (
@@ -50,11 +50,11 @@ class SignupForm extends React.Component {
         ))}
       </ul>
     )
-  }
+  };
 
   componentWillUnmount() {
     this.props.removeErrors();
-  }
+  };
 
   render() {
 
@@ -117,7 +117,7 @@ class SignupForm extends React.Component {
         </div>
       </div>
     )
-  }
-}
+  };
+};
 
 export default withRouter(SignupForm);

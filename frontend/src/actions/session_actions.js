@@ -24,7 +24,7 @@ export const receiveErrors = (errors) => ({
 export const removeSessionErrors = () => ({
     type: REMOVE_SESSION_ERRORS,
     errors: []
-})
+});
 
 export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
@@ -61,7 +61,7 @@ export const login = user => dispatch => {
                 dispatch(receiveErrors(err.response.data));
             })
     )
-}
+};
 
 
 export const logout = () => dispatch => {

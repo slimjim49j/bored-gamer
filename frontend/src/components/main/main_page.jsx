@@ -1,6 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { withRouter } from 'react-router-dom';
 import '../../assets/stylesheets/main_page.css';
 
 import CategoryCheckBoxContainer from '../checkbox/category_checkbox_container';
@@ -12,11 +10,7 @@ class MainPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
-  }
-
-  // viewGame(e) {
-  //   this.props.history.push(`/game/${e.currentTarget.id}`)
-  // }
+  };
 
   handleCheckboxClick(e) {
     if (
@@ -46,12 +40,10 @@ class MainPage extends React.Component {
 
     const display = loggedIn ? (
       <div className="logged-in-main">
-        {/* <p>Hello you are logged in {currentUser.username}</p> */}
         <div className="main-image-container"></div>
       </div>
     ) : (
       <div className="splash-page">
-        {/* <p>Hello you are logged out</p> */}
         <div className="splash-image-container"></div>
         <div className="splash-text-container"></div>
       </div>
@@ -66,11 +58,10 @@ class MainPage extends React.Component {
 
         <div className="games-checkbox-container">
           <div className="display-text">
-            <p>Blah blah blah choose some things and get a game yay</p>
+            <p>Choose categories and mechanics to receive games to play</p>
           </div>
 
           <div className="scroll-containers" onClick={this.handleCheckboxClick}>
-            {/* onClick={this.handleCheckboxClick} */}
             <div className="categories-div">
               <p className="checkbox-title">Categories</p>
               {<CategoryCheckBoxContainer {...this.props} />}
@@ -83,14 +74,12 @@ class MainPage extends React.Component {
           </div>
 
           <div className="games-container">
-            {/* <p>Available Games</p> */}
             {<GameIndexContainer {...this.props} />}
           </div>
         </div>
-        {/* <p className="artwork-cred">All artwork done by Brian Miller</p> */}
       </div>
     );
-  }
-}
+  };
+};
 
 export default MainPage;

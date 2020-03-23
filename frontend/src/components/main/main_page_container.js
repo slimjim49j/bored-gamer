@@ -9,13 +9,13 @@ const mapStateToProps = state => ({
   loggedIn: state.session.isAuthenticated,
   currentUser: state.session.user,
   pageNum: state.session.pageNum,
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   resetPageNum: () => dispatch(resetPageNum()),
   incrementPageNum: () => dispatch(incrementPageNum()),
   getInitialGames: (pageNum, categories, mechanics) => dispatch(getInitialGames(pageNum, categories, mechanics)),
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

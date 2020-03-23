@@ -9,38 +9,20 @@ class ShowGame extends React.Component {
       notes:"",
       game:{}
     }
-  }
+  };
 
   componentDidMount() {
     const game = this.props.getOneGame(this.props.match.params.gameId)
                   .then(game => this.setState({game: game.data}))
     
-  }
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const game = Object.assign({}, this.state);
-  //   this.props.saveGame(game)
-  //   this.setState({
-  //     likability: "",
-  //     notes: ""
-  //   })
-  // }
-
-  // update(field) {
-  //   return e => this.setState({
-  //     [field]: e.currentTarget.value
-  //   })
-  // }
+  };
 
   render() {
     const game = this.state.game;
-    console.log(Array.isArray(game.categories));
 
     if (!Array.isArray(game.categories)) {
       return null
     } else {
-    
       return(
         <div className="main-game-show-div">
           <div className="game-show-background"></div>
@@ -88,7 +70,7 @@ class ShowGame extends React.Component {
         </div>
       )
     }
-  }
-}
+  };
+};
 
 export default ShowGame;

@@ -17,7 +17,6 @@ class GameIndex extends React.Component {
         };
 
         window.onscroll = debounce(() => {
-            // debugger
             const {
                 loadGames, 
                 state: {
@@ -40,7 +39,6 @@ class GameIndex extends React.Component {
     };
 
     componentDidMount() {
-        // debugger
         this.props.resetPageNum();
         this.props.getInitialGames(1)
             .then(() => this.props.incrementPageNum());
@@ -59,29 +57,11 @@ class GameIndex extends React.Component {
 
         this.props.getMoreGames(pageNum, categories, mechanics)
             .then(() => this.props.incrementPageNum());
-        
-        // debugger
-        // this.setState({ isLoading: true }, () => {
-        //     this.props.getGames(this.props.pageNum)
-        //     .then((games) => {
-        //         this.setState({
-        //             games: [...this.state.games, ...games.data], 
-        //             isLoading: false
-        //         })
-        //         this.props.incrementPageNum();
-        //     })
-        //     .catch((err) => {
-        //         this.setState({
-        //             error: err.message, 
-        //             isLoading: false
-        //         })
-        //     });
-        // })
-    }
+    };
 
     render() {
         const { games } = this.props;
-        console.log(games)
+
         return (
             <div className="main-game-index-div">
                 {games.map((game, i) => (
@@ -89,7 +69,7 @@ class GameIndex extends React.Component {
                         <Link to={`/games/${game._id}`}
                             className="games-li"
                             >
-                                <img src={game.imageUrl} className="game-image-index" alt="game-image"/>
+                                <img src={game.imageUrl} className="game-image-index" alt="boardgame"/>
                                 <label className="game-index-title">{game.title}</label>
     
                         </Link>
