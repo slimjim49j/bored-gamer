@@ -19,7 +19,6 @@ class MainPage extends React.Component {
   // }
 
   handleCheckboxClick(e) {
-    // debugger;
     if (
       e.target.tagName.toLowerCase() === "input" &&
       e.target.type === "checkbox"
@@ -33,6 +32,9 @@ class MainPage extends React.Component {
         .querySelectorAll(".mechanics-div input[type=checkbox]:checked"))
         .map(el => el.value);
       this.props.resetPageNum();
+      
+      const pageNum = 1;
+      this.props.getInitialGames(pageNum, categories, mechanics);
     }
 
     
