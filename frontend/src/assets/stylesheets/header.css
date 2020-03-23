@@ -1,5 +1,4 @@
 .main-header-div {
-  /* border: 1px solid red; */
   font-family: 'Sen', sans-serif;
   display: flex;
   justify-content: space-between;
@@ -13,7 +12,6 @@
 }
 
 .header-left {
-  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -35,15 +33,12 @@
 }
 
 .header-right {
-  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   height: 100%;
-  /* width: 300px; */
 }
 
 .login-container {
-  /* border: 1px solid red; */
   width: 150px;
   margin: 0px 25px;
   display: flex;
@@ -60,7 +55,6 @@
 /* LOGGED IN */
 
 .logout-container {
-  /* border: 1px solid red; */
   margin-right: 15px;
   display: flex;
   align-items: center;
@@ -69,7 +63,6 @@
 }
 
 .username-btn {
-  /* border: 1px solid blue; */
   color: white;
   cursor: pointer;
   text-decoration: none;

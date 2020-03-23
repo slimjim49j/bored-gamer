@@ -83,6 +83,8 @@ class GameIndex extends React.Component {
         console.log(games)
         return (
             <div className="main-game-index-div">
+                <p className="game-count">Games Available: {games.length}</p>
+                <div className="all-games">
                 {games.map((game, i) => (
                     <ul className="games-list" key={`${i}`}>
                         <Link to={`/games/${game._id}`}
@@ -94,6 +96,7 @@ class GameIndex extends React.Component {
                         </Link>
                     </ul>
                 ))}
+                </div>
             </div>
         )
     }
