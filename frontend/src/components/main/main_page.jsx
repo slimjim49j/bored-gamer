@@ -19,7 +19,7 @@ class MainPage extends React.Component {
   // }
 
   handleCheckboxClick(e) {
-    debugger;
+    // debugger;
     if (
       e.target.tagName.toLowerCase() === "input" &&
       e.target.type === "checkbox"
