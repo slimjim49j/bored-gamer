@@ -10,7 +10,6 @@ class GameIndex extends React.Component {
         super(props);
 
         this.state = {
-            pageNum: 0,
             error: false, 
             hasMore: true, 
             isLoading: false, 
@@ -18,8 +17,9 @@ class GameIndex extends React.Component {
         };
 
         window.onscroll = debounce(() => {
+            // debugger
             const {
-                loadUsers, 
+                loadGames, 
                 state: {
                     error, 
                     isLoading, 
@@ -33,33 +33,36 @@ class GameIndex extends React.Component {
                 window.innerHeight + document.documentElement.scrollTop
                 >= document.documentElement.offsetHeight
             ) {
-                loadUsers();
+                loadGames();
             }
         }, 100);
 
     };
 
     componentDidMount() {
-        this.loadUsers();
+        // debugger
+        this.props.resetPageNum();
+        this.loadGames();
     };
 
-    loadUsers = () => {
-        this.props.incrementPageNum();
+    loadGames = () => {
+        // debugger
         this.setState({ isLoading: true }, () => {
             this.props.getGames(this.props.pageNum)
-                .then((games) => {
-                    this.setState({
-                        games: [...this.state.games, ...games.data], 
-                        isLoading: false
-                    })
+            .then((games) => {
+                this.setState({
+                    games: [...this.state.games, ...games.data], 
+                    isLoading: false
                 })
-                .catch((err) => {
-                    this.setState({
-                        error: err.message, 
-                        isLoading: false
-                    })
-                });
+            })
+            .catch((err) => {
+                this.setState({
+                    error: err.message, 
+                    isLoading: false
+                })
+            });
         })
+        this.props.incrementPageNum();
     }
 
     render() {

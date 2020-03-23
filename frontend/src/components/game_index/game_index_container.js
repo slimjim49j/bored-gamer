@@ -5,7 +5,7 @@ import { getGames } from '../../util/game_index_util';
 
 import { incrementPageNum, resetPageNum } from "../../actions/session_actions";
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
     pageNum: state.session.pageNum,
 });
 

@@ -11,7 +11,7 @@ import GameIndexContainer from '../game_index/game_index_container';
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
-    // this.viewGame = this.viewGame.bind(this);
+    this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
   }
 
   // viewGame(e) {
@@ -32,7 +32,7 @@ class MainPage extends React.Component {
       Array.from(document
         .querySelectorAll(".mechanics-div input[type=checkbox]:checked"))
         .map(el => el.value);
-      // this.props.rese
+      this.props.resetPageNum();
     }
 
     

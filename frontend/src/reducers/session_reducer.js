@@ -8,7 +8,7 @@ import {
 const initialState = {
     isAuthenticated: false,
     user: {},
-    pageNum: 0,
+    pageNum: 1,
 };
 
 export default function (state = initialState, action) {
@@ -26,7 +26,7 @@ export default function (state = initialState, action) {
             nextState.pageNum += 1;
             return nextState;
         case RESET_PAGE_NUM:
-            nextState.pageNum = 0;
+            nextState.pageNum = 1;
             return nextState;
         default:
             return state;

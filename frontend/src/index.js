@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const currentTime = Date.now() / 1000;
         const decodedUser = jwt_decode(localStorage.jwtToken);
-        const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
+        const preloadedState = { session: { isAuthenticated: true, user: decodedUser, pageNum: 1 } };
         store = configureStore(preloadedState);
 
         if (decodedUser.exp < currentTime) {
