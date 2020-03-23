@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import GameIndex from './game_index';
 
-import { getGames } from '../../util/game_index_util';
+import { getInitialGames, getMoreGames } from '../../actions/game_index_actions';
 
 import { incrementPageNum, resetPageNum } from "../../actions/session_actions";
 
 const mapStateToProps = (state, ownProps) => ({
     pageNum: state.session.pageNum,
+    games: state.entities.games,
 });
 
 const mapDispatchToProps = dispatch => ({
-  getGames: pageNum => getGames(pageNum),
+  getInitialGames: (pageNum, categories, mechanics) => dispatch(getInitialGames(pageNum, categories, mechanics)),
+  getMoreGames: (pageNum, categories, mechanics) => dispatch(getMoreGames(pageNum, categories, mechanics)),
   incrementPageNum: () => dispatch(incrementPageNum()),
   resetPageNum: () => dispatch(resetPageNum())
 });

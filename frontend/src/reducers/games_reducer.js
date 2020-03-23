@@ -12,7 +12,7 @@ export default function (state = [], action) {
         case REPLACE_ALL_GAMES:
             return action.games;
         case RECEIVE_GAMES:
-            nextState.push(action.games)
+            nextState = nextState.concat(action.games);
             return nextState;
         default:
             return state;
