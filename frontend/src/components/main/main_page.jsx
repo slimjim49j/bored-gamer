@@ -65,7 +65,7 @@ class MainPage extends React.Component {
 
         <div className="games-checkbox-container">
           <div className="display-text">
-            <p>Blah blah blah choose some things and get a game yay</p>
+            <p>Choose categories and mechanics to receive games to play</p>
           </div>
 
           <div className="scroll-containers" onClick={this.handleCheckboxClick}>
