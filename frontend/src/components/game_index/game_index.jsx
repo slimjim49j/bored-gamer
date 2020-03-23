@@ -40,34 +40,47 @@ class GameIndex extends React.Component {
     };
 
     componentDidMount() {
-        // this.props.resetPageNum();
-        // debugger;
-        this.loadGames();
+        // debugger
+        this.props.resetPageNum();
+        this.props.getInitialGames();
     };
 
     loadGames = () => {
+        const categories =
+            Array.from(document
+                .querySelectorAll(".categories-div input[type=checkbox]:checked"))
+                .map(el => el.value);
+        const mechanics =
+            Array.from(document
+                .querySelectorAll(".mechanics-div input[type=checkbox]:checked"))
+                .map(el => el.value);
+        const pageNum = this.props.pageNum;
+
+        this.props.getMoreGames(pageNum, categories, mechanics)
+            .then(() => this.props.incrementPageNum());
+        
         // debugger
-        this.setState({ isLoading: true }, () => {
-            this.props.getGames(this.props.pageNum)
-            .then((games) => {
-                this.setState({
-                    games: [...this.state.games, ...games.data], 
-                    isLoading: false
-                })
-                this.props.incrementPageNum();
-            })
-            .catch((err) => {
-                this.setState({
-                    error: err.message, 
-                    isLoading: false
-                })
-            });
-        })
+        // this.setState({ isLoading: true }, () => {
+        //     this.props.getGames(this.props.pageNum)
+        //     .then((games) => {
+        //         this.setState({
+        //             games: [...this.state.games, ...games.data], 
+        //             isLoading: false
+        //         })
+        //         this.props.incrementPageNum();
+        //     })
+        //     .catch((err) => {
+        //         this.setState({
+        //             error: err.message, 
+        //             isLoading: false
+        //         })
+        //     });
+        // })
     }
 
     render() {
-        const { games } = this.state;
-
+        const { games } = this.props;
+        console.log(games)
         return (
             <div className="main-game-index-div">
                 {games.map((game, i) => (
