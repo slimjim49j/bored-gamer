@@ -12,10 +12,6 @@
   cursor: pointer;
 }
 
-.checkbox-input:active {
-  background-color: darkblue;
-}
-
 .checkbox-title {
   display: flex;
   justify-content: center;

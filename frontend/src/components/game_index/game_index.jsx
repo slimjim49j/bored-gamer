@@ -2,7 +2,7 @@ import React from "react";
 import debounce from "lodash.debounce";
 import { Link } from 'react-router-dom'
 import "../../assets/stylesheets/game_index.css";
-import '../../assets/stylesheets/css_reset.css'
+import '../../assets/stylesheets/main_page.css';
 
 
 class GameIndex extends React.Component {

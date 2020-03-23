@@ -79,7 +79,6 @@
 
 .session-btn:hover {
   cursor: pointer;
-  opacity: 80%;
 }
 
 .demo-btn {
@@ -94,7 +93,6 @@
 
 .demo-btn:hover {
   cursor: pointer;
-  opacity: 60%;
 }
 
 .change-form-btn {
@@ -104,7 +102,6 @@
 
 .change-form-btn:hover {
   cursor: pointer;
-  opacity: 80%;
 }
 
 /* ERRORS */
