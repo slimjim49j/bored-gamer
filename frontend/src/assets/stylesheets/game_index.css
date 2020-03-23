@@ -14,12 +14,10 @@
   display: flex;
   flex-direction: column;
   margin: 20px 10px;
-  opacity: 80%;
   transition-duration: 0.5s;
 }
 
 .games-list:hover {
-  opacity: 100%;
   cursor: pointer;
 }
 
@@ -33,6 +31,7 @@
   margin: 20px 10px;
   text-decoration: none;
   color: white;
+  
 }
 
 li {

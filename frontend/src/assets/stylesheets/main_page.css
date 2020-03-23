@@ -31,8 +31,7 @@
 
 .splash-text-container {
   padding: 20px 60px;
-  color: white;
-  opacity: 90%;
+  color: rgb(255, 255, 255, 0.8);
   min-width: 390px;
 }
 
@@ -70,8 +69,7 @@
   margin-top: 50px;
   font-size: 70px;
   font-weight: 700;
-  color: white;
-  opacity: 80%;
+  color: rgb(255, 255, 255, 0.8);
   z-index: -1;
 }
 
