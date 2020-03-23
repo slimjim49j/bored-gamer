@@ -88,7 +88,7 @@ class GameIndex extends React.Component {
                         <Link to={`/games/${game._id}`}
                             className="games-li"
                             >
-                                <img src={game.imageUrl} className="game-image-index" alt="game-image"/>
+                                <img src={game.imageUrl} className="game-image-index" alt="boardgame"/>
                                 <label className="game-index-title">{game.title}</label>
     
                         </Link>
