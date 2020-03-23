@@ -54,6 +54,7 @@ class GameIndex extends React.Component {
                     games: [...this.state.games, ...games.data], 
                     isLoading: false
                 })
+                this.props.incrementPageNum();
             })
             .catch((err) => {
                 this.setState({
@@ -62,7 +63,6 @@ class GameIndex extends React.Component {
                 })
             });
         })
-        this.props.incrementPageNum();
     }
 
     render() {
