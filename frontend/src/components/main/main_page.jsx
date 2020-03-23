@@ -35,6 +35,7 @@ class MainPage extends React.Component {
       
       const pageNum = 1;
       this.props.getInitialGames(pageNum, categories, mechanics);
+      this.props.incrementPageNum();
     }
 
     

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { resetPageNum } from "../../actions/session_actions";
+import { resetPageNum, incrementPageNum } from "../../actions/session_actions";
 import { getInitialGames } from "../../actions/game_index_actions";
 
 import MainPage from './main_page';
@@ -14,6 +14,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   resetPageNum: () => dispatch(resetPageNum()),
+  incrementPageNum: () => dispatch(incrementPageNum()),
   getInitialGames: (pageNum, categories, mechanics) => dispatch(getInitialGames(pageNum, categories, mechanics)),
 })
 
