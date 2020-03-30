@@ -29,7 +29,7 @@ class Header extends React.Component {
         </div>
 
         <div className="header-right">
-          <Link to="/about">About</Link>
+          <Link className="about-link" to="/about">about</Link>
           {display}
         </div>
       </div>
