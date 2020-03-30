@@ -1,21 +1,48 @@
 .about-us-div {
+  /* border: 1px solid purple; */
   font-family: 'Sen', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us {
+  margin: 20px;
+  font-weight: 700;
+  font-size: 40px;
 }
 
 .profiles {
   display: flex;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: flex;
   justify-content: space-evenly;
   width: 100vw;
 }
 
 .person {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  background-color: black;
+  padding: 10px;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   margin: 10px;
   width: 300px;
   height: auto;
+}
+
+.person > h1 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+.about-logo {
+  fill: white;
+  margin: 5px;
 }
