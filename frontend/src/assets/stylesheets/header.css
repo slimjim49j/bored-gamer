@@ -45,6 +45,11 @@
   justify-content: space-between;
 }
 
+.about-link {
+  text-decoration: none;
+  color: white;
+}
+
 .login-header-btn {
   color: white;
   text-decoration: none;

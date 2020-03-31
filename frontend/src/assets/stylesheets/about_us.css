@@ -46,3 +46,10 @@
   fill: white;
   margin: 5px;
 }
+
+.our-games {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+}
