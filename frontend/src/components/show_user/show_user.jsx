@@ -10,10 +10,10 @@ const ShowUser = (props) => (
           <div className="user-profile-message">
             <p className="user-username">Hello {props.user.username}</p>
 
-            <div className="game-boolean-options">
+            {/* <div className="game-boolean-options">
               <button>Liked</button>
               <button>Disliked</button>
-            </div>
+            </div> */}
             
           </div>
 
