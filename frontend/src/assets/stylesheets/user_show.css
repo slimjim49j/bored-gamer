@@ -49,7 +49,7 @@
 }
 
 .user-games {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: flex;
   justify-content: space-evenly;
   /* flex-wrap: wrap; */
