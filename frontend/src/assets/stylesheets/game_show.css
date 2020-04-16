@@ -107,3 +107,13 @@ textarea {
 input:hover {
   cursor: pointer;
 }
+
+.prev-page {
+  margin: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+.prev-page:hover {
+  opacity: 80%;
+}

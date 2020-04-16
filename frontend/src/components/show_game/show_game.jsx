@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../assets/stylesheets/game_show.css'
+import { Link } from 'react-router-dom';
 
 class ShowGame extends React.Component {
   constructor(props) {
@@ -72,6 +73,7 @@ class ShowGame extends React.Component {
                 </form>
               </div>
             </div>
+                <Link className="prev-page" to="/">Play a different game</Link>
           </div>
         </div>
       )
