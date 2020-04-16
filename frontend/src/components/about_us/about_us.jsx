@@ -58,10 +58,11 @@ const AboutUs = () => (
     </div>
     <div className="our-games">
       <p className="about-us">Our Favorite Board Games!</p>
-      <Link to="games/5e766e968c93f01b4c3018f3">Clue</Link>
-      <Link to="games/5e766e958c93f01b4c3010e2">Codenames</Link>
-      <Link to="games/5e766e978c93f01b4c301ea5">Risk</Link>
+
       <Link to="games/5e766e968c93f01b4c30125f">Betrayal at House on the Hill</Link>
+      <Link to="games/5e766e958c93f01b4c3010e2">Codenames</Link>
+      <Link to="games/5e766e968c93f01b4c3018f3">Clue</Link>
+      <Link to="games/5e766e978c93f01b4c301ea5">Risk</Link>
     </div>
 
   </div>

@@ -6,6 +6,8 @@ class ShowUser extends React.Component {
   //   super(props)
   // }
 
+  
+
   render() {
     return (
       <div className="main-user-show-div">
@@ -13,7 +15,13 @@ class ShowUser extends React.Component {
 
         <div className="user-contents">
           <div className="user-profile-message">
-            <p>Hello {this.props.user.username}</p>
+            <p className="user-username">Hello {this.props.user.username}</p>
+
+            <div className="game-boolean-options">
+              <button>Liked</button>
+              <button>Disliked</button>
+            </div>
+            
           </div>
 
           <div className="user-games">
