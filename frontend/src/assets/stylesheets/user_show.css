@@ -51,16 +51,30 @@
 .user-games {
   border: 1px solid blue;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
-  flex-wrap: wrap;
-  width: 80vw;
-
+  /* flex-wrap: wrap; */
+  width: 90vw;
 }
 
-.user-games > div {
+.like-title {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+/* .user-games > div {
   border: 1px solid red;
-  width: 250px;
-  height: 250px;
-  margin: 20px 10px;
+} */
+
+.user-liked-games > div {
+  border: 1px solid red;
+  margin: 5px;
+  width: 100px;
+  height: 100px
+}
+
+.user-disliked-games > div {
+  border: 1px solid red;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
 }
