@@ -8,6 +8,8 @@ import configureStore from './store/store';
 import { setAuthToken } from './util/session_api_util';
 import { login, logout } from './actions/session_actions'; 
 
+import axios from "axios";
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
@@ -31,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.dispatch = store.dispatch; 
     window.login = login; 
     window.logout = logout;
+    window.getTest = () => {
+      return axios.get("/api/likes/test");
+    };
     
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);

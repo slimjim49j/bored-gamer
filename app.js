@@ -5,6 +5,8 @@ const db = require("./config/keys").mongoURI;
 
 const users = require("./routes/api/users");
 const games = require("./routes/api/games");
+const likes = require("./routes/api/likes");
+
 // const User = require("./models/User");
 const Game = require("./models/Game");
 const passport = require("passport");
@@ -36,6 +38,7 @@ mongoose
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
 app.use("/api/games", games);
+app.use("/api/likes", likes);
 
 // seeding games route, only run once
 // const seeds = require("./seeds/seeds.json");
