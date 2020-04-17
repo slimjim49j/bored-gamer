@@ -39,7 +39,6 @@ class ShowGame extends React.Component {
   };
 
   handleDislike(e) {
-    // e.preventDefault();
     this.setState({
       like: { ...this.state.like, dislike: e.target.value === 'dislike' }
     });
@@ -63,11 +62,13 @@ class ShowGame extends React.Component {
           <div className="game-container">
             <p className="game-title">{game.title}</p>
             <div className="game-contents">
+
               <div className="game-display-left">
                 <div className="game-image-container">
                   <img className="game-image" src={game.imageUrl} alt="" />
                 </div>
               </div>
+
               <div className="game-display-right">
                 <div className="game-description">
                   <label>Avg rating: <p>{Math.floor(game.avgRating)}/10</p></label>
@@ -77,6 +78,7 @@ class ShowGame extends React.Component {
                   <label>Max players: <p>{game.maxPlayers}</p></label>
                   <label>Avg play time: <p>{game.avgTime}min</p></label>
                 </div>
+
                 <form className="game-form" onSubmit={this.handleLike}>
                   <p>Did you and your friends enjoy the game?</p>
                   <div >
@@ -100,6 +102,7 @@ class ShowGame extends React.Component {
                   </label>
                   <input className="save-game-btn" type="submit" value="save"/>
                 </form>
+                
               </div>
             </div>
             <Link className="prev-page" to="/">Play a different game</Link>

@@ -1,5 +1,4 @@
 .about-us-div {
-  /* border: 1px solid purple; */
   font-family: 'Sen', sans-serif;
   width: 100vw;
   height: 100vh;
@@ -17,14 +16,12 @@
 
 .profiles {
   display: flex;
-  /* border: 1px solid blue; */
   display: flex;
   justify-content: space-evenly;
   width: 100vw;
 }
 
 .person {
-  /* border: 1px solid red; */
   background-color: black;
   padding: 10px;
   color: white;
