@@ -150,7 +150,13 @@ router.get("/:userId/likes", (req, res) => {
         if (err) {
           throw err;
         } else {
-            const formattedData = data.map(user => user.game[0])
+            const formattedData = data.map(user => {
+                const newLike = {};
+                newLike.review = user.likes.review;
+                newLike.game = user.game[0];
+                return newLike;
+            });
+            console.log(formattedData)
           return res.json(formattedData);
         }
       }
