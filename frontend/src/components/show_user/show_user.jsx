@@ -1,19 +1,31 @@
 import React from 'react';
 import '../../assets/stylesheets/user_show.css'
 
-const ShowUser = (props) => (
+class ShowUser extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
+  componentDidMount() {
+    const likedGames = this.props.getUserGames(this.props.user.id, false)
+                        .then(games => this.setState({games: games}))     
+  }
+
+  render () {
+    // const games = this.state.games;
+
+    return (
       <div className="main-user-show-div">
         <div className="user-show-background"></div>
 
         <div className="user-contents">
           <div className="user-profile-message">
-            <p className="user-username">Hello {props.user.username}</p>
+            <p className="user-username">Hello {this.props.user.username}</p>
 
-            {/* <div className="game-boolean-options">
+            <div className="game-boolean-options">
               <button>Liked</button>
               <button>Disliked</button>
-            </div> */}
+            </div>
             
           </div>
 
@@ -35,7 +47,9 @@ const ShowUser = (props) => (
           </div>
         </div>
       </div>
-)
+    )
+  };
+};
 
 
 export default ShowUser;
