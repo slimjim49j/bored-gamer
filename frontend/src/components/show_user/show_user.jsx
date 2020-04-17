@@ -8,7 +8,7 @@ class ShowUser extends React.Component {
 
   componentDidMount() {
     const likedGames = this.props.getUserGames(this.props.user.id, false)
-                        .then(games => this.setState({games: games}))     
+                        .then(games => this.setState({games: games.data}))     
   }
 
   render () {

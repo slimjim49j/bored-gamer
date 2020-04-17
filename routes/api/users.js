@@ -6,6 +6,8 @@ const bcrypt = require("bcryptjs");
 const keys = require("../../config/keys");
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
+const mongoose = require("mongoose");
+const ObjectId = mongoose.Types.ObjectId;
 
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
@@ -114,13 +116,14 @@ router.get("/:userId", (req, res) => {
 });
 
 router.get("/:userId/likes", (req, res) => {
-    const dislike = req.query.dislike;
+    const dislike = req.query.dislike === "true";
+    const userId = req.params.userId;
 
     User.aggregate(
       [
         {
           $match: {
-            _id: req.params.userId,
+            _id: ObjectId(userId),
           },
         },
         {
@@ -147,23 +150,11 @@ router.get("/:userId/likes", (req, res) => {
         if (err) {
           throw err;
         } else {
-          return res.json(data);
+            const formattedData = data.map(user => user.game[0])
+          return res.json(formattedData);
         }
       }
     );
-
-    User.findOne({ _id: req.params.userId }).then((user) => {
-        if (user) {
-            return res.json({
-                _id: user._id,
-                username: user.username,
-                email: user.email,
-                date: user.date,
-            });
-        } else {
-            return res.status(422).json({ user: "This user does not exist" });
-        }
-    });
 })
 
 module.exports = router;
