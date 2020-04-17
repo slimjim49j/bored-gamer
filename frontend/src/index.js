@@ -7,6 +7,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { setAuthToken } from './util/session_api_util';
 import { login, logout } from './actions/session_actions'; 
+import {createLike} from './util/dislike_util'
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.dispatch = store.dispatch; 
     window.login = login; 
     window.logout = logout;
+    window.createLike = createLike;
     
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
