@@ -15,7 +15,7 @@ class ShowGame extends React.Component {
         review: ''
       }
     }
-    this.handleInput = this.handleInput.bind(this);
+    this.handleLike = this.handleLike.bind(this);
     this.handleDislike = this.handleDislike.bind(this);
     this.handleReview = this.handleReview.bind(this);
   };
