@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Like = require("./Like");
+const { LikeSchema } = require("./Like");
 
 const UserSchema = new Schema({
     username: {
@@ -19,7 +19,7 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     }, 
-    likes: [Like],
+    likes: [LikeSchema],
 });
 
 module.exports = User = mongoose.model("User", UserSchema);
