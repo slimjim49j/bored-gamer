@@ -116,6 +116,42 @@ router.get("/:userId", (req, res) => {
 router.get("/:userId/likes", (req, res) => {
     const dislike = req.query.dislike;
 
+    User.aggregate(
+      [
+        {
+          $match: {
+            _id: req.params.userId,
+          },
+        },
+        {
+          $unwind: {
+            path: "$likes",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
+          $match: {
+            "likes.dislike": dislike,
+          },
+        },
+        {
+          $lookup: {
+            from: "games",
+            localField: "likes.gameId",
+            foreignField: "_id",
+            as: "game",
+          },
+        },
+      ],
+      function (err, data) {
+        if (err) {
+          throw err;
+        } else {
+          return res.json(data);
+        }
+      }
+    );
+
     User.findOne({ _id: req.params.userId }).then((user) => {
         if (user) {
             return res.json({
