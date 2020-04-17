@@ -1,16 +1,28 @@
 const express = require("express");
 const router = express.Router();
-
-// const jwt = require("jsonwebtoken");
 const passport = require("passport");
 
-router.get('/test', passport.authenticate('jwt', { session: false }), (req, res) => {
+const Like = require("../../models/Like");
+
+// const jwt = require("jsonwebtoken");
+
+router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
     debugger
-    console.log(req)
-    res.json({
-        id: req.user.id,
-        username: req.user.username,
-        email: req.user.email
+    User.findOne({ username: req.user.username }).then(user => {
+        if (!user) {
+            errors.username = "This user does not exist";
+            return res.status(400).json(errors);
+        }
+
+        const newLike = new Like({
+            gameId: req.body.gameId,
+            dislike: req.body.dislike,
+            review: req.body.review,
+        })
+
+        user.likes.push(newLike);
+
+        res.json(newLike);
     });
 })
 

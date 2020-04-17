@@ -8,3 +8,6 @@ export const getDislikes = (userId, dislike) => {
     })
 };
 
+export const createLike = (like) => {
+  return axios.post(`/api/likes`, like);
+}; 
