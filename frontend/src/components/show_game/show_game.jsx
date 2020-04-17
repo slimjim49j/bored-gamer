@@ -22,7 +22,7 @@ class ShowGame extends React.Component {
 
   componentDidMount() {
     const game = this.props.getOneGame(this.props.match.params.gameId)
-      .then(game => this.setState({ game: game.data, like: { ...this.state.like, gameId: game.id } }))
+      .then(game => this.setState({ game: game.data, like: { ...this.state.like, gameId: game.data._id } }))
   };
 
   handleLike(e) {
@@ -51,7 +51,7 @@ class ShowGame extends React.Component {
       like: { ...this.state.like, review: e.target.value }
     });
   };
-  
+
   render() {
     const game = this.state.game;
     if (!Array.isArray(game.categories)) {
@@ -77,25 +77,28 @@ class ShowGame extends React.Component {
                   <label>Max players: <p>{game.maxPlayers}</p></label>
                   <label>Avg play time: <p>{game.avgTime}min</p></label>
                 </div>
-                <form className="game-form">
+                <form className="game-form" onSubmit={this.handleLike}>
                   <p>Did you and your friends enjoy the game?</p>
-                  <div onClick={this.handleDislike}>
+                  <div >
                     <label> <span role="img" aria-label="like">👍🏼</span>
-                      <input type="radio" name="likability" value="like" />
+                      <input type="radio" name="likability" value="like" onChange={this.handleDislike} checked={ !this.state.like.dislike && this.state.like.dislike !== null }/>
                     </label>
                     <label> <span role="img" aria-label="like">👎🏼</span>
-                      <input type="radio" name="likability" value="dislike" />
+                      <input type="radio" name="likability" value="dislike" onChange={this.handleDislike} checked={this.state.like.dislike && this.state.like.dislike !== null}/>
                     </label>
                   </div>
-                  <label onChange={this.handleReview}>
+                  <label>
                     <textarea
                       name="game_notes"
                       placeholder="additional notes"
                       cols="50"
-                      rows="5">
+                      rows="5"
+                      onChange={this.handleReview}
+                      value={this.state.like.review}
+                      >
                     </textarea>
                   </label>
-                  <input className="save-game-btn" type="submit" value="save" onSubmit={this.handleLike} />
+                  <input className="save-game-btn" type="submit" value="save"/>
                 </form>
               </div>
             </div>
