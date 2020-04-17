@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
-
-const Like = new Schema({
-    game_id: ObjectId,
-    dislike: Boolean,
-})
+const Like = require("./Like");
 
 const UserSchema = new Schema({
     username: {
