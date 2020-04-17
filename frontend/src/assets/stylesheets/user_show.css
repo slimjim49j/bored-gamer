@@ -3,8 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: rgb(0, 36, 26); */
-  /* color: white; */
   width: 100vw;
   height: 100vh;
 }
@@ -13,30 +11,27 @@
   position: fixed;
   z-index: -1;
   top: 50px;
-  /* background-color: rgb(0, 36, 26); */
+  background-color: rgb(0, 36, 26);
   height: 100vh;
   width: 100vw;
 }
 
 .user-contents {
-  /* border: 1px solid red; */
-  width: 80vw;
+  width: 90vw;
   margin: 80px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* color: white; */
+  color: white;
 }
 
-.user-profile-message {
+.user-profile-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 20px;
-  width: 70vw;
-  height: 50px;
 }
 
 .user-username {
@@ -44,37 +39,63 @@
   font-size: 40px;
 }
 
-.game-boolean-options {
-  margin: 20px;
+.user-link-options {
+  margin: 10px;
+}
+
+.user-link-options > * {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.user-link-options > *:hover {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .user-games {
-  /* border: 1px solid blue; */
   display: flex;
-  justify-content: space-evenly;
-  /* flex-wrap: wrap; */
-  width: 90vw;
+  flex-direction: column;
+  align-items: center;
 }
 
 .like-title {
-  font-size: 20px;
-  margin: 15px 0;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-/* .user-games > div {
-  border: 1px solid red;
-} */
-
-.user-liked-games > div {
-  border: 1px solid red;
-  margin: 5px;
-  width: 100px;
-  height: 100px
+.user-games-ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.user-disliked-games > div {
-  border: 1px solid red;
-  margin: 5px;
-  width: 100px;
-  height: 100px;
+.user-games-li {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  
+}
+
+.user-game-link {
+  text-decoration: none;
+  color: white;
+}
+
+.user-game-link:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.user-game-image {
+  height: 200px;
+  width: 200px;
+}
+
+.user-game-review {
+  border-top: 1px solid rgb(165, 165, 165);
+  margin-top: 10px;
+  width: 100%;
+  text-align: justify;
 }
