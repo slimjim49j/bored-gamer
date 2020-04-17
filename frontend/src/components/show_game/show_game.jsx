@@ -39,7 +39,7 @@ class ShowGame extends React.Component {
   };
 
   handleDislike(e) {
-    e.preventDefault();
+    // e.preventDefault();
     this.setState({
       like: { ...this.state.like, dislike: e.target.value === 'dislike' }
     });
