@@ -156,7 +156,6 @@ router.get("/:userId/likes", (req, res) => {
                 newLike.game = user.game[0];
                 return newLike;
             });
-            console.log(formattedData)
           return res.json(formattedData);
         }
       }
