@@ -44,6 +44,10 @@
   margin: 5px;
 }
 
+.about-logo:hover {
+  opacity: 0.8;
+}
+
 .our-games {
   display: flex;
   flex-direction: column;
@@ -54,4 +58,8 @@
 .our-games > *:not(p) {
   text-decoration: none;
   color:rgb(83, 83, 83)
+}
+
+.our-games > *:not(p):hover {
+  color: rgba(0, 0, 0, 0.5)
 }
