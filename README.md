@@ -8,11 +8,9 @@ enter the live site [here](http://bored-gamer.herokuapp.com/)
 
 _**bored gamer**_ will help you pick the right game for your next game night. It is built using the following: 
 
-* **Backend:** MongoDB, Express.js
-* **Frontend:** React.js, Redux
-* **Hosting:** Heroku
-* **More:** Node.js, SCSS, Mongoose, Axios
-  
+* **Backend:** MongoDB, Express.js, Node.js, Mongoose
+* **Frontend:** React.js, Redux, Axios, SCSS
+* **Hosting:** Heroku  
 
 # Features 
 **User Authentication** 
