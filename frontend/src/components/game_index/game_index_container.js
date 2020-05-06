@@ -8,6 +8,7 @@ import { incrementPageNum, resetPageNum } from "../../actions/session_actions";
 const mapStateToProps = (state, ownProps) => ({
     pageNum: state.session.pageNum,
     games: state.entities.games,
+    gameCount: state.session.gameCount,
 });
 
 const mapDispatchToProps = dispatch => ({

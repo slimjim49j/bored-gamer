@@ -9,9 +9,9 @@ export default function (state = [], action) {
 
     switch(action.type) {
         case REPLACE_ALL_GAMES:
-            return action.games;
+            return action.games.games;
         case RECEIVE_GAMES:
-            nextState = nextState.concat(action.games);
+            nextState = nextState.concat(action.games.games);
             return nextState;
         default:
             return state;

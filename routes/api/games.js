@@ -65,12 +65,15 @@ router.get("/index/:pageId", (req, res) => {
 
     const resultsPerPage = +req.query.gameNum || 50;
     const page = req.params.pageId || 1;
-
+    // debugger;
     Game.find(findParams)
     .skip(resultsPerPage * page - resultsPerPage)
     .limit(resultsPerPage)
     .then(games => {
-      return res.json(games);
+        Game.count(findParams).then(gameCount => {
+            // debugger
+            return res.json({games, gameCount});
+        })
     })
     .catch(err => console.log(err));
 });

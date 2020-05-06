@@ -9,6 +9,8 @@ export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RESET_PAGE_NUM = "RESET_PAGE_NUM";
 export const INCREMENT_PAGE_NUM = "INCREMENT_PAGE_NUM";
 
+export const RECEIVE_GAME_COUNT = "RECEIVE_GAME_COUNT";
+
 export const receiveCurrentUser = currentUser => {
     return({
         type: RECEIVE_CURRENT_USER,
@@ -37,6 +39,11 @@ export const resetPageNum = () => ({
 export const incrementPageNum = () => ({
     type: INCREMENT_PAGE_NUM,
 });
+
+export const receiveGameCount = gameCount => ({
+    type: RECEIVE_GAME_COUNT,
+    gameCount,
+})
 
 export const signup = currentUser => dispatch => (
     APIUtil.signup(currentUser).then(() => (

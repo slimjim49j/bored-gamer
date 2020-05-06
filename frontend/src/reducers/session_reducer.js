@@ -5,10 +5,16 @@ import {
     RESET_PAGE_NUM
 } from '../actions/session_actions';
 
+import {
+    RECEIVE_GAMES,
+    REPLACE_ALL_GAMES,
+} from "../actions/game_index_actions";
+
 const initialState = {
     isAuthenticated: false,
     user: {},
     pageNum: 1,
+    gameCount: 0,
 };
 
 export default function (state = initialState, action) {
@@ -28,6 +34,11 @@ export default function (state = initialState, action) {
         case RESET_PAGE_NUM:
             nextState.pageNum = 1;
             return nextState;
+
+        case RECEIVE_GAMES, REPLACE_ALL_GAMES:
+            nextState.gameCount = action.games.gameCount;
+            return nextState;
+
         default:
             return state;
     }

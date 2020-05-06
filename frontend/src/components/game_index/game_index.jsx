@@ -61,23 +61,24 @@ class GameIndex extends React.Component {
 
     render() {
         const { games } = this.props;
+        const gameCount = this.props.gameCount;
 
         return (
             <div className="main-game-index-div">
-                <p className="game-count">Games Available: {games.length}</p>
-                <div className="all-games">
-                {games.map((game, i) => (
-                    <ul className="games-list" key={`${i}`}>
-                        <Link to={`/games/${game._id}`}
-                            className="games-li"
-                            >
-                                <img src={game.imageUrl} className="game-image-index" alt="boardgame"/>
-                                <label className="game-index-title">{game.title}</label>
-    
-                        </Link>
-                    </ul>
-                ))}
-                </div>
+                <p className="game-count">Games Available: { gameCount }</p>
+                <ul className="all-games">
+                    {games.map((game, i) => (
+                        <li className="games-list" key={`${i}`}>
+                            <Link to={`/games/${game._id}`}
+                                className="games-li"
+                                >
+                                    <img src={game.imageUrl} className="game-image-index" alt="boardgame"/>
+                                    <label className="game-index-title">{game.title}</label>
+        
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
             </div>
         )
     }
