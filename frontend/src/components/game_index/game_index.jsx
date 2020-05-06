@@ -29,8 +29,8 @@ class GameIndex extends React.Component {
             if (error || isLoading || !hasMore) return;
 
             if (
-                window.innerHeight + document.documentElement.scrollTop
-                >= document.documentElement.offsetHeight
+                (window.innerHeight + document.documentElement.scrollTop)
+                >= (document.documentElement.scrollHeight - 1000)
             ) {
                 loadGames();
             }
