@@ -69,7 +69,8 @@
   margin-top: 50px;
   font-size: 70px;
   font-weight: 700;
-  color: rgb(255, 255, 255, 0.8);
+  text-shadow: 5px 5px 2px black;
+  color: rgb(255, 255, 255, 0.87);
   z-index: -1;
 }
 
