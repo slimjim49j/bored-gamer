@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/stylesheets/main_page.css';
+// import '../../assets/stylesheets/main_page.css';
 
 import CategoryCheckBoxContainer from '../checkbox/category_checkbox_container';
 import MechanicCheckBoxContainer from '../checkbox/mechanic_checkbox_container';
@@ -10,6 +10,8 @@ class MainPage extends React.Component {
   constructor(props) {
     super(props);
     this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
+    this.handleClickStart = this.handleClickStart.bind(this);
+    this.handleClickGames = this.handleClickGames.bind(this);
   };
 
   handleCheckboxClick(e) {
@@ -35,6 +37,16 @@ class MainPage extends React.Component {
     
   };
 
+  handleClickStart(e) {
+    e.preventDefault();
+    document.querySelector("#start").scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  handleClickGames(e) {
+    e.preventDefault();
+    document.querySelector("#games").scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   render() {
     const { loggedIn } = this.props;
 
@@ -54,10 +66,15 @@ class MainPage extends React.Component {
           {display}
           <p className="splash-title">bored gamer</p>
           <p className="splash-intro">For when you just don't know what to play</p>
+          <br/>
+          <br/>
+          <a className="a" onClick={this.handleClickStart} >Get Started</a>
         </div>
 
-        <div className="games-checkbox-container">
+        <br/>
+        <div id ="start" className="games-checkbox-container">
           <div className="display-text">
+            <h1>Ready for some games?</h1>
             <p>Choose categories and mechanics to receive games to play</p>
             <p>Select as many as you'd like to narrow down your options</p>
           </div>
@@ -72,7 +89,16 @@ class MainPage extends React.Component {
               <p className="checkbox-title">Mechanics</p>
               {<MechanicCheckBoxContainer {...this.props} />}
             </div>
+            <br/>
+            <a className="a" onClick={this.handleClickGames}>See Games</a>
+            <br/>
+            <br/>
           </div>
+
+
+          <div id="games" className="display-text">
+          </div>
+
           <div className="games-container">
             {<GameIndexContainer {...this.props} />}
           </div>

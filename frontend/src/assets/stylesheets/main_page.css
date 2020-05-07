@@ -25,7 +25,7 @@
   background-image: url("../images/wild.jpg");
   width: 100vw;
   min-width: 550px;
-  height: 50vh;
+  height: 70vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -53,19 +53,32 @@
   background-repeat: no-repeat;
   width: 100vw;
   min-width: 550px;
-  height: 50vh;
+  height: 70vh;
 }
+
 
 .display-div{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 200px;
   margin-bottom: 200px;
   width: 100vw;
   height: 50vh;
   color: rgb(255, 255, 255, 0.8);
+}
+
+.a {
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  text-shadow: 2px 2px black;
+}
+
+.a:hover {
+  opacity: 0.7;
+  transition-duration: 0.3s;
 }
 
 .splash-title {
@@ -84,21 +97,30 @@
   align-items: center;
   width: 100vw;
   height: 500px;
+  margin: 10px 0;
   padding: 50px 0px 100px;
   color: white;
 }
 
 .display-text {
+  width: 100vw;
+  padding: 20px 0;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.display-text > h1 {
+  font-size: 25px;
+  text-shadow: 2px 2px black;
 }
 
 .scroll-containers {
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 90vw;
+  margin: 20px 0;
 }
 
 .categories-div, .mechanics-div {
