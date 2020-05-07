@@ -16,13 +16,13 @@ class MechanicCheckBox extends React.Component {
         
     render () {   
         return(
-            <div>
-                <ul>
+            <div >
+                <ul className="checkboxes">
                     {this.state.mechanics.map((mechanic, i) => (
                         <li key={`${i}`} className="checkbox-li">
                             <label className="checkbox-label">
                                 <input className="checkbox-input" value={mechanic._id} type="checkbox" />
-                                <span>{`${mechanic._id} (${mechanic.total})`}</span>
+                                <span>{mechanic._id}</span>
                             </label>
                         </li>
                     ))}

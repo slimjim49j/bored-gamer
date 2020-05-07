@@ -17,13 +17,13 @@ class CategoryCheckBox extends React.Component {
         
     render () {   
         return(
-            <div>
-                <ul>
+            <div >
+                <ul className="checkboxes">
                     {this.state.categories.map((category, i) => (
                         <li key={`${i}`} className="checkbox-li">
                             <label className="checkbox-label">
                                 <input className="checkbox-input" value={category._id} type="checkbox"/>
-                                <span>{`${category._id} (${category.total}`})</span>
+                                <span>{category._id}</span>
                             </label>
                         </li>
                     ))}
