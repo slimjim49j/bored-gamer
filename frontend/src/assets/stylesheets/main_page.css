@@ -90,28 +90,38 @@
   width: 80vw;
 }
 
-.categories-div {
+.categories-div, .mechanics-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 4px;
   padding: 20px;
   background-color: rgb(0, 0, 0, 0.5);
-  overflow: scroll;
+  overflow-y: scroll;
   width: 250px;
   height: 300px;
+
+  
 }
 
-.mechanics-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 4px;
-  padding: 20px;
-  background-color: rgb(0, 0, 0, 0.5);
-  overflow: scroll;
-  width: 250px;
-  height: 300px;
+.checkboxes-wrapper::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    background-color: rgb(70, 70, 70);
+}
+
+.checkboxes-wrapper::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: black;
+}
+
+.checkboxes-wrapper::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: rgba(255, 219, 161, 0.7);
 }
 
 .artwork-cred {

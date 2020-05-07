@@ -1,15 +1,29 @@
+.display-text {
+  padding-bottom: 50px;
+}
+
 .checkbox-label {
   display: flex;
   justify-content: space-between;
   padding: 1px 0;
-}
-
-.checkbox-li:hover {
-  background-color: rgb(34, 34, 34);
+  cursor: pointer;
 }
 
 .checkbox-input {
-  cursor: pointer;
+  display: none;
+}
+
+.checkbox-li span {
+  width: 100%;
+}
+
+.checkbox-li:hover span {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.checkbox-input:checked + span {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
 }
 
 .checkbox-title {

@@ -62,12 +62,12 @@ class MainPage extends React.Component {
           </div>
 
           <div className="scroll-containers" onClick={this.handleCheckboxClick}>
-            <div className="categories-div">
+            <div className="categories-div checkboxes-wrapper">
               <p className="checkbox-title">Categories</p>
               {<CategoryCheckBoxContainer {...this.props} />}
             </div>
 
-            <div className="mechanics-div">
+            <div className="mechanics-div checkboxes-wrapper">
               <p className="checkbox-title">Mechanics</p>
               {<MechanicCheckBoxContainer {...this.props} />}
             </div>
