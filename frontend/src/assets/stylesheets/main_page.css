@@ -72,7 +72,10 @@
   margin: 40px 0 10px;
   font-size: 70px;
   font-weight: 700;
-  text-shadow: 2px 2px black;
+  text-shadow: 5px 5px 2px black;
+  color: rgb(255, 255, 255, 0.87);
+  z-index: -1;
+
 }
 
 .games-checkbox-container {
