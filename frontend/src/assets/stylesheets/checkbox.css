@@ -2,6 +2,16 @@
   padding-bottom: 50px;
 }
 
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.checkbox-li {
+  text-align: center;
+}
+
 .checkbox-label {
   display: flex;
   justify-content: space-between;
@@ -17,8 +27,17 @@
   width: 100%;
 }
 
-.checkbox-li:hover span {
+.checkbox-li:hover {
   background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  transition-duration: 0.3s;
+}
+
+.checkbox-input + span {
+  border: 1px solid white;
+  border-radius: 2px;
+  margin: 5px 5px;
+  padding: 5px;
 }
 
 .checkbox-input:checked + span {

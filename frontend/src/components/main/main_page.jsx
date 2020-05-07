@@ -45,7 +45,6 @@ class MainPage extends React.Component {
     ) : (
       <div className="splash-page">
         <div className="splash-image-container"></div>
-        <div className="splash-text-container"></div>
       </div>
     );
 
@@ -54,11 +53,13 @@ class MainPage extends React.Component {
         <div className="display-div">
           {display}
           <p className="splash-title">bored gamer</p>
+          <p className="splash-intro">For when you just don't know what to play</p>
         </div>
 
         <div className="games-checkbox-container">
           <div className="display-text">
             <p>Choose categories and mechanics to receive games to play</p>
+            <p>Select as many as you'd like to narrow down your options</p>
           </div>
 
           <div className="scroll-containers" onClick={this.handleCheckboxClick}>

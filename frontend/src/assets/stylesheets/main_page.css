@@ -13,6 +13,7 @@
   z-index: -1;
   top: 50px;
   background-color: rgb(0, 36, 26);
+  background-image: linear-gradient(rgb(0, 68, 49), rgb(1, 27, 20));
   height: 100vh;
   min-width: 550px;
 }
@@ -27,13 +28,9 @@
   height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
-.splash-text-container {
-  padding: 20px 60px;
-  color: rgb(255, 255, 255, 0.8);
-  min-width: 390px;
-}
 
 /* LOGGED IN */
 
@@ -41,37 +38,44 @@
   position: fixed;
   z-index: -1;
   background-color: rgb(0, 22, 54);
-  margin-top: 50px;
+  background-image: linear-gradient(rgb(0, 61, 153), rgb(0, 16, 41));
+  top: 50px;
   width: 100vw;
   height: 100vh;
 }
 
 .main-image-container {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url("../images/space.jpg");
-  background-size: 1500px 2250px;
   background-size: cover;
   background-repeat: no-repeat;
-  vertical-align: bottom;
-  overflow: hidden;
   width: 100vw;
   min-width: 550px;
   height: 50vh;
-  background-position: 0px -300px;
+}
+
+.display-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 200px;
+  width: 100vw;
+  height: 50vh;
+  color: rgb(255, 255, 255, 0.8);
 }
 
 .splash-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 50vh;
-  margin-top: 50px;
+  margin: 40px 0 10px;
   font-size: 70px;
   font-weight: 700;
   text-shadow: 5px 5px 2px black;
   color: rgb(255, 255, 255, 0.87);
   z-index: -1;
+
 }
 
 .games-checkbox-container {
@@ -84,26 +88,36 @@
   color: white;
 }
 
+.display-text {
+  text-align: center;
+}
+
 .scroll-containers {
+  /* border: 1px solid red; */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  width: 80vw;
+  justify-content: space-between;
+  width: 90vw;
 }
 
 .categories-div, .mechanics-div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  border: 2px solid rgb(0, 0, 0, 0.5);
   border-radius: 4px;
   padding: 20px;
+  margin: 10px 0;
   background-color: rgb(0, 0, 0, 0.5);
   overflow-y: scroll;
-  width: 250px;
-  height: 300px;
-
-  
+  width: 70vw;
+  min-width: 650px;
+  height: 200px;
 }
+
+
 
 .checkboxes-wrapper::-webkit-scrollbar-track
 {
@@ -125,7 +139,3 @@
     background-color: rgba(255, 219, 161, 0.7);
 }
 
-.artwork-cred {
-  color: white;
-  font-size: 12px;
-}

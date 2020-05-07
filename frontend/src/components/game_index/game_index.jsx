@@ -60,8 +60,7 @@ class GameIndex extends React.Component {
     };
 
     render() {
-        const { games } = this.props;
-        const gameCount = this.props.gameCount;
+        const { games, gameCount } = this.props;
 
         return (
             <div className="main-game-index-div">
