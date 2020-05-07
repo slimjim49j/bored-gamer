@@ -27,7 +27,9 @@ export default function (state = initialState, action) {
                 user: action.currentUser
             };
         case RECEIVE_USER_LOGOUT:
-            return initialState;
+            nextState.isAuthenticated = initialState.isAuthenticated;
+            nextState.user = initialState.user;
+            return nextState;
         case INCREMENT_PAGE_NUM:
             nextState.pageNum += 1;
             return nextState;
