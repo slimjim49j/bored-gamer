@@ -5,9 +5,15 @@ import '../../assets/stylesheets/about_us.css'
 const AboutUs = () => (
   <div className="about-us-div">
     <p className="about-us">ABOUT US</p>
+    <div className="about-app">
+      <p>Bored Gamer is here to help you choose a game when you just don't know what to play</p>
+    </div>
+      <h1 className="about-head">Created By</h1>
     <div className="profiles">
       <div className="person">
         <h1>Jimmy Collins</h1>
+        <img src="/images/jimmy.jpg" alt="jimmy" className="about-image"/>
+        <p>Backend Developer</p>
         <a href="https://www.linkedin.com/in/jimmy-collins-a31aa41a2/" target="_blank">
           <svg className="about-logo" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
@@ -24,6 +30,8 @@ const AboutUs = () => (
 
       <div className="person">
         <h1>Naveen Thota</h1>
+        <img src="/images/naveen.jpg" alt="naveen" className="about-image" />
+        <p>Frontend Developer</p>
         <a href="https://www.linkedin.com/in/helloitsnaveen/" target="_blank">
           <svg className="about-logo" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
@@ -40,6 +48,8 @@ const AboutUs = () => (
 
       <div className="person">
         <h1>Jen Lu</h1>
+        <img src="/images/jen.jpg" alt="jen" className="about-image" />
+        <p>Frontend Developer</p>
         <a href="https://www.linkedin.com/in/jennifer-lu-5b1b83a2/" target="_blank">
           <svg className="about-logo" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
@@ -57,7 +67,7 @@ const AboutUs = () => (
       
     </div>
     <div className="our-games">
-      <p className="about-us">Our Favorite Board Games!</p>
+      <p className="about-head">Our Favorite Board Games!</p>
 
       <Link to="games/5e766e968c93f01b4c30125f">Betrayal at House on the Hill</Link>
       <Link to="games/5e766e958c93f01b4c3010e2">Codenames</Link>
