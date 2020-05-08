@@ -24,14 +24,9 @@ class SignupForm extends React.Component {
 
     const user = Object.assign({}, this.state);
     this.props.signup(user)
-    this.props.login(user);
-
-    this.setState({
-      email: "",
-      username: "",
-      password: "",
-      password2: "",
-    })
+      .then(() => (
+        this.props.login(user)
+      ));
   };
 
   update(field) {
@@ -71,39 +66,39 @@ class SignupForm extends React.Component {
             </div>
 
             <form className="session-form" onSubmit={this.handleSubmit}>
-              <input 
+              <input
                 className="form-input"
                 type="text"
                 value={this.state.email}
                 placeholder="email"
                 onChange={this.update('email')}
-                />
+              />
 
-                <input 
-                  className="form-input"
-                  type="username"
-                  value={this.state.username}
-                  placeholder="username"
-                  onChange={this.update('username')}
-                />
+              <input
+                className="form-input"
+                type="username"
+                value={this.state.username}
+                placeholder="username"
+                onChange={this.update('username')}
+              />
 
-                <input 
-                  className="form-input"
-                  type="password"
-                  value={this.state.password}
-                  placeholder="password"
-                  onChange={this.update('password')}
-                />
+              <input
+                className="form-input"
+                type="password"
+                value={this.state.password}
+                placeholder="password"
+                onChange={this.update('password')}
+              />
 
-                <input 
-                  className="form-input"
-                  type="password"
-                  value={this.state.password2}
-                  placeholder="confirm password"
-                  onChange={this.update('password2')}
-                />
+              <input
+                className="form-input"
+                type="password"
+                value={this.state.password2}
+                placeholder="confirm password"
+                onChange={this.update('password2')}
+              />
 
-                <input className="session-btn" type="submit" value="sign up"/>
+              <input className="session-btn" type="submit" value="sign up" />
             </form>
 
             <div>
