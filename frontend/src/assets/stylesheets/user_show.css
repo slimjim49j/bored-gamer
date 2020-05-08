@@ -38,6 +38,7 @@
 .user-username {
   font-weight: 700;
   font-size: 40px;
+  text-shadow: 3px 2px black;
 }
 
 .user-link-options {
@@ -52,6 +53,7 @@
 
 .user-link-options > *:hover {
   color: rgba(255, 255, 255, 0.5);
+  transition-duration: 0.3s;
 }
 
 .user-games {
@@ -63,6 +65,7 @@
 .like-title {
   font-size: 24px;
   font-weight: 700;
+  text-shadow: 2px 2px black;
 }
 
 .user-games-ul {
@@ -83,10 +86,12 @@
 .user-game-link {
   text-decoration: none;
   color: white;
+  margin-bottom: 5px;
 }
 
 .user-game-link:hover {
   color: rgba(255, 255, 255, 0.5);
+  transition-duration: 0.3s;
 }
 
 .user-game-image {
