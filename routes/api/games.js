@@ -2,10 +2,13 @@ const express = require("express");
 const router = express.Router();
 
 const Game = require("../../models/Game");
-const { Like } = require("../../models/Like");
+const User = require("../../models/User");
+const mongoose = require("mongoose");
+const ObjectId = mongoose.Types.ObjectId;
+// const { Like } = require("../../models/Like");
 
 router.get('/categories', (req, res) => {
-    const categoryAggregate = Game.aggregate([
+    Game.aggregate([
         { $unwind: { path: "$categories" } },
         {
             $group:
@@ -25,7 +28,7 @@ router.get('/categories', (req, res) => {
 });
 
 router.get('/mechanics', (req, res) => {
-    const categoryAggregate = Game.aggregate([
+    Game.aggregate([
         { $unwind: { path: "$mechanics" } },
         {
             $group:
@@ -36,12 +39,9 @@ router.get('/mechanics', (req, res) => {
         },
         { $sort: { total: -1 } }
     ], function ( err, data ) {
-        if (err) {
-            throw err;
-        } else {
-            return res.json( data )
-        };
-    })
+        if (err) throw err;
+        else return res.json(data);
+    });
 });
 
 router.get('/:gameId', (req, res) => {
@@ -52,9 +52,31 @@ router.get('/:gameId', (req, res) => {
 });
 
 router.get('/:gameId/likes', (req, res) => {
-    Like.find({ gameId: req.params.gameId }).then(likes => {
-        return res.json(likes);
-    });
+    User.aggregate([
+        {
+            '$match': {
+                'likes.gameId': new ObjectId('5e766e958c93f01b4c3010bc')
+            }
+        }, {
+            '$project': {
+                'username': 1,
+                'likes': {
+                    '$filter': {
+                        'input': '$likes',
+                        'as': 'like',
+                        'cond': {
+                            '$eq': [
+                                '$$like.gameId', new ObjectId('5e766e958c93f01b4c3010bc')
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    ], function (err, data) {
+        if (err) throw err;
+        else return res.json(data);
+    })
 });
 
 
