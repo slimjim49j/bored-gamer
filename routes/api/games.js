@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Game = require("../../models/Game");
+const { Like } = require("../../models/Like");
 
 router.get('/categories', (req, res) => {
     const categoryAggregate = Game.aggregate([
@@ -48,7 +49,15 @@ router.get('/:gameId', (req, res) => {
         if (game) return res.json(game);
         else return res.status(422).json({ game: "This game does not exist" });
     });
-})
+});
+
+router.get('/:gameId/likes', (req, res) => {
+    Like.find({ gameId: req.params.gameId }).then(likes => {
+        return res.json(likes);
+    });
+});
+
+
 
 router.get("/index/:pageId", (req, res) => {
     let findParams = {};
