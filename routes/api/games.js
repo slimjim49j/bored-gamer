@@ -66,7 +66,7 @@ router.get('/:gameId/likes', (req, res) => {
                         'as': 'like',
                         'cond': {
                             '$eq': [
-                                '$$like.gameId', new ObjectId('5e766e958c93f01b4c3010bc')
+                                '$$like.gameId', new ObjectId(req.params.gameId)
                             ]
                         }
                     }

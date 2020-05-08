@@ -22,8 +22,8 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
 
         user.likes.push(newLike);
         user.save();
-        console.log(newLike)
-        newLike.save().then(like =>{ res.json(like); console.log(like)});
+        // console.log(newLike)
+        newLike.save().then(like => res.json(like));
     });
 })
 
