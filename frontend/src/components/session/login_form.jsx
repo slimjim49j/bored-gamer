@@ -22,11 +22,6 @@ class LoginForm extends React.Component {
 
     const user = Object.assign({}, this.state);
     this.props.login(user)
-
-    this.setState({
-      username: "",
-      password: ""
-    });
   };
 
   update(field) {
@@ -37,6 +32,7 @@ class LoginForm extends React.Component {
 
   loginDemo(e) {
     e.preventDefault();
+    e.stopPropagation();
     const demoUser = {
       username: "demo_user",
       password: "password"

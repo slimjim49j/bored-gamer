@@ -36,6 +36,7 @@ class GameIndex extends React.Component {
             }
         }, 100);
 
+        this.handleClick = this.handleClick.bind(this);
     };
 
     componentDidMount() {
@@ -59,16 +60,28 @@ class GameIndex extends React.Component {
             .then(() => this.props.incrementPageNum());
     };
 
+    handleClick(e) {
+        const el = e.target.closest(".games-list");
+        if (el && !this.props.isAuthenticated) {
+            this.props.receiveDestination(el.dataset.destination);
+        }
+    }
+
     render() {
         const { games, gameCount } = this.props;
 
         return (
             <div className="main-game-index-div">
                 <p className="game-count">Games Available: { gameCount }</p>
-                <ul className="all-games">
+                <ul className="all-games" onClick={this.handleClick}>
                     {games.map((game, i) => (
-                        <li className="games-list" key={`${i}`}>
-                            <Link to={`/games/${game._id}`}
+                        <li
+                            className="games-list"
+                            key={`${i}`}
+                            data-destination={`/games/${game._id}`} 
+                            >
+                            <Link
+                                to={`/games/${game._id}`}
                                 className="games-li"
                                 >
                                     <img src={game.imageUrl} className="game-image-index" alt="boardgame"/>

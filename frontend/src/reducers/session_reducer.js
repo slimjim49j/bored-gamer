@@ -2,7 +2,8 @@ import {
     RECEIVE_CURRENT_USER,
     RECEIVE_USER_LOGOUT,
     INCREMENT_PAGE_NUM,
-    RESET_PAGE_NUM
+    RESET_PAGE_NUM,
+    RECEIVE_DESTINATION,
 } from '../actions/session_actions';
 
 import {
@@ -15,6 +16,7 @@ const initialState = {
     user: {},
     pageNum: 1,
     gameCount: 0,
+    destination: null,
 };
 
 export default function (state = initialState, action) {
@@ -41,6 +43,10 @@ export default function (state = initialState, action) {
             nextState.gameCount = action.games.gameCount;
             return nextState;
 
+        case RECEIVE_DESTINATION:
+            nextState.destination = action.destination;
+            return nextState;
+            
         default:
             return state;
     }

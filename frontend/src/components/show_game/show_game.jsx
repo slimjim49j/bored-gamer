@@ -22,7 +22,8 @@ class ShowGame extends React.Component {
 
   componentDidMount() {
     const game = this.props.getOneGame(this.props.match.params.gameId)
-      .then(game => this.setState({ game: game.data, like: { ...this.state.like, gameId: game.data._id } }))
+      .then(game => this.setState({ game: game.data, like: { ...this.state.like, gameId: game.data._id } }));
+    this.props.receiveDestination(null);
   };
 
   handleLike(e) {

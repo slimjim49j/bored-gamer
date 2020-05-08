@@ -11,6 +11,8 @@ export const INCREMENT_PAGE_NUM = "INCREMENT_PAGE_NUM";
 
 export const RECEIVE_GAME_COUNT = "RECEIVE_GAME_COUNT";
 
+export const RECEIVE_DESTINATION = "RECEIVE_DESTINATION";
+
 export const receiveCurrentUser = currentUser => {
     return({
         type: RECEIVE_CURRENT_USER,
@@ -43,7 +45,12 @@ export const incrementPageNum = () => ({
 export const receiveGameCount = gameCount => ({
     type: RECEIVE_GAME_COUNT,
     gameCount,
-})
+});
+
+export const receiveDestination = destination => ({
+    type: RECEIVE_DESTINATION,
+    destination,
+});
 
 export const signup = currentUser => dispatch => (
     APIUtil.signup(currentUser).then(() => (
