@@ -11,3 +11,7 @@ export const getDislikes = (userId, dislike) => {
 export const createLike = (like) => {
   return axios.post(`/api/likes`, like);
 }; 
+
+export const getGameLikes = (gameId) => {
+    return axios.get(`/api/games/${gameId}/likes`)
+};

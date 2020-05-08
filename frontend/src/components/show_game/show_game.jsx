@@ -13,7 +13,8 @@ class ShowGame extends React.Component {
         gameId: null,
         dislike: null,
         review: ''
-      }
+      }, 
+      gameLikes: {}
     }
     this.handleLike = this.handleLike.bind(this);
     this.handleDislike = this.handleDislike.bind(this);
@@ -24,6 +25,9 @@ class ShowGame extends React.Component {
     const game = this.props.getOneGame(this.props.match.params.gameId)
       .then(game => this.setState({ game: game.data, like: { ...this.state.like, gameId: game.data._id } }));
     this.props.receiveDestination(null);
+
+    const gameLikes = this.props.getGameLikes(this.props.match.params.gameId)
+      .then(games => this.setState({ likedGames: games.data[0] }))
   };
 
   handleLike(e) {
@@ -54,7 +58,10 @@ class ShowGame extends React.Component {
 
   render() {
     const game = this.state.game;
-    if (!Array.isArray(game.categories)) {
+    const reviews = this.state.likedGames ? this.state.likedGames : null
+    // if (reviews) console.log(reviews.likes);
+  
+    if (!Array.isArray(game.categories) || !reviews) {
       return null
     } else {
       return (
@@ -108,9 +115,15 @@ class ShowGame extends React.Component {
             </div>
             <Link className="prev-page" to="/">Play a different game</Link>
           </div>
+          <div>
+            {reviews.likes.map((review) => 
+              console.log(review)
+            )}
+          </div>
         </div>
       )
     }
+
   };
 };
 export default ShowGame;
