@@ -6,6 +6,10 @@ const LikeSchema = new Schema({
   gameId: ObjectId,
   dislike: Boolean,
   review: String,
+  date: {
+    type: Date,
+    default: Date.now
+  },
 });
 
 const Like = mongoose.model("Like", LikeSchema);
