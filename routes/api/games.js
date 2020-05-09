@@ -82,6 +82,7 @@ router.get('/:gameId/likes', (req, res) => {
 
 
 router.get("/index/:pageId", (req, res) => {
+    // setup find arguments
     let findParams = {};
     if (req.query.categories) {
         findParams.categories = {
@@ -94,10 +95,17 @@ router.get("/index/:pageId", (req, res) => {
         };
     }
 
+    // setup sort arguments
+    let sort = {};
+    const order = (req.query.order ? parseInt(req.query.order) : 1);
+    if (req.query.sort) sort[req.query.sort] = order;
+    else sort["_id"] = order;
+
     const resultsPerPage = +req.query.gameNum || 50;
     const page = req.params.pageId || 1;
     // debugger;
     Game.find(findParams)
+    .sort(sort)
     .skip(resultsPerPage * page - resultsPerPage)
     .limit(resultsPerPage)
     .then(games => {
