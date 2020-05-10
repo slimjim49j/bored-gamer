@@ -14,20 +14,22 @@ class MechanicCheckBox extends React.Component {
             .then(mechanics => {this.setState({ mechanics: mechanics.data })})
     }
         
-    render () {   
-        return(
-            <div >
+    render() {
+        return (
+            this.props.hidden ? (
+            <div>
                 <ul className="checkboxes">
-                    {this.state.mechanics.map((mechanic, i) => (
-                        <li key={`${i}`} className="checkbox-li">
-                            <label className="checkbox-label">
-                                <input className="checkbox-input" value={mechanic._id} type="checkbox" />
-                                <span>{mechanic._id}</span>
-                            </label>
-                        </li>
-                    ))}
+                {this.state.mechanics.map((mechanic, i) => (
+                    <li key={`${i}`} className="checkbox-li">
+                        <label className="checkbox-label">
+                            <input className="checkbox-input" value={mechanic._id} type="checkbox" />
+                            <span>{mechanic._id}</span>
+                        </label>
+                    </li>
+                ))}
                 </ul>
             </div>
+            ) : null
         )
     };
 };

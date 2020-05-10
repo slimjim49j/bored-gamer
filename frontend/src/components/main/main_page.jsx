@@ -9,10 +9,23 @@ import GameIndexContainer from '../game_index/game_index_container';
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      categories: false,
+      mechanics: false,
+    }
+    
     this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
     this.handleClickStart = this.handleClickStart.bind(this);
     this.handleClickGames = this.handleClickGames.bind(this);
+    this.handleCheckboxTitleClick = this.handleCheckboxTitleClick.bind(this);
   };
+
+  handleCheckboxTitleClick(field) {
+    return () => {
+      const newState = !this.state[field];
+      this.setState({[field]: newState});
+    }
+  }
 
   handleCheckboxClick(e) {
     if (
@@ -33,8 +46,6 @@ class MainPage extends React.Component {
       this.props.getInitialGames(pageNum, categories, mechanics);
       this.props.incrementPageNum();
     }
-
-    
   };
 
   handleClickStart(e) {
@@ -81,13 +92,23 @@ class MainPage extends React.Component {
 
           <div className="scroll-containers" onClick={this.handleCheckboxClick}>
             <div className="categories-div checkboxes-wrapper">
-              <p className="checkbox-title">Categories</p>
-              {<CategoryCheckBoxContainer {...this.props} />}
+              <p
+                className={"checkbox-title"}
+                onClick={this.handleCheckboxTitleClick("categories")}
+              >
+                Categories
+              </p>
+              <CategoryCheckBoxContainer {...this.props} hidden={this.state.categories} />
             </div>
 
             <div className="mechanics-div checkboxes-wrapper">
-              <p className="checkbox-title">Mechanics</p>
-              {<MechanicCheckBoxContainer {...this.props} />}
+              <p
+                className="checkbox-title"
+                onClick={this.handleCheckboxTitleClick("mechanics")}
+              >
+                Mechanics
+              </p>
+              <MechanicCheckBoxContainer {...this.props} hidden={this.state.mechanics} />
             </div>
             <br/>
             <a className="a" onClick={this.handleClickGames}>See Games</a>

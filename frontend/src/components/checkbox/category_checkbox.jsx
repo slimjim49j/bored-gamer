@@ -15,9 +15,10 @@ class CategoryCheckBox extends React.Component {
             .then(categories => {this.setState({ categories: categories.data })})
     };
         
-    render () {   
-        return(
-            <div >
+    render() {   
+        return (
+            this.props.hidden ? (
+            <div>
                 <ul className="checkboxes">
                     {this.state.categories.map((category, i) => (
                         <li key={`${i}`} className="checkbox-li">
@@ -29,6 +30,7 @@ class CategoryCheckBox extends React.Component {
                     ))}
                 </ul>
             </div>
+            ) : null
         )
     };
 };
