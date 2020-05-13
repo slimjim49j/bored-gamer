@@ -1,5 +1,9 @@
 .display-text {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
+}
+
+.display-text p {
+  padding-top: 10px;
 }
 
 .checkboxes {

@@ -94,6 +94,8 @@
 .splash-intro {
   font-weight: 600;
   text-shadow: 0 0 3px black;
+
+  padding-top: 10px;
 }
 
 .games-checkbox-container {

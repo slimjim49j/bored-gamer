@@ -30,7 +30,7 @@ class GameIndex extends React.Component {
 
             if (
                 (window.innerHeight + document.documentElement.scrollTop)
-                >= (document.documentElement.scrollHeight - 1000)
+                >= (document.documentElement.scrollHeight - 500)
             ) {
                 loadGames();
             }

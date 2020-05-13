@@ -1,3 +1,60 @@
+.sort-container h3 {
+  font-size: 23px;
+  text-shadow: 0 0 10px black,
+              0 0 5px black,
+              0 0 3px black,
+              0 0 15px black,
+              0 0 7px black,
+              0 0 2px black;
+
+  width: fit-content;
+  padding: 15px 0;
+  margin: 0 auto;
+}
+
+.sort-dropdown {
+  display: inline-block;
+  background-color: #000000d4;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Sen', sans-serif;
+  cursor: pointer;
+  
+  width: 400px;
+  height: 30px;
+  border-color: black;
+  margin-right: 10px;
+}
+
+.order-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.order-checkbox ~ span {
+  display: inline-block;
+  cursor: pointer;
+
+  padding: 10px;
+  border: solid white;
+  border-width: 0 5px 5px 0;
+
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
+.order-checkbox:checked ~ span {
+  transform: rotate(-135deg) translate(-10px, -10px);
+  -webkit-transform: rotate(-135deg) translate(-10px, -10px);
+}
+
+
+
+
+/* switch */
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -52,4 +109,28 @@ input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
+}
+
+
+
+
+
+/* arrow */
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }

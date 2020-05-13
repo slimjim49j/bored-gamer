@@ -3,7 +3,9 @@ import "../../assets/stylesheets/order.css";
 
 export default props => {
     return (
-        <div>
+        <div className="sort-container">
+            <h3>Sort By:</h3>
+            
             <select
                 id=""
                 className="sort-dropdown"
@@ -17,10 +19,9 @@ export default props => {
                 <option value="avgRating">Rating</option>
             </select>
 
-            <p>Ascending</p>
-            <label className="switch">
+            <label>
                 <input type="checkbox" className="order-checkbox" />
-                <span className="slider"></span>
+                <span className=""></span>
             </label>
         </div>
     )

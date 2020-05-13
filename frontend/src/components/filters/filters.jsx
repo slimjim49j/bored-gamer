@@ -59,6 +59,8 @@ class Filters extends Component {
   render() {
       return (
         <div className="scroll-containers" onClick={this.handleFilterChange}>
+          {/* filters */}
+          
           <div className="categories-div checkboxes-wrapper">
             <p
               className={"checkbox-title"}
@@ -78,6 +80,8 @@ class Filters extends Component {
             </p>
             <MechanicCheckBoxContainer hidden={this.state.mechanics} />
           </div>
+
+          {/* sort */}
           <Sort handleFilterChange={this.handleFilterChange} />
           <br/>
           <a className="a" onClick={this.handleClickGames}>See Games</a>
