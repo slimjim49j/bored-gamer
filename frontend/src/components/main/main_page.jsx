@@ -1,61 +1,21 @@
 import React from 'react';
-// import '../../assets/stylesheets/main_page.css';
+import '../../assets/stylesheets/main_page.css';
 
-import CategoryCheckBoxContainer from '../checkbox/category_checkbox_container';
-import MechanicCheckBoxContainer from '../checkbox/mechanic_checkbox_container';
+
 
 import GameIndexContainer from '../game_index/game_index_container';
+import Filters from '../filters/filters';
 
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      categories: false,
-      mechanics: false,
-    }
     
-    this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
     this.handleClickStart = this.handleClickStart.bind(this);
-    this.handleClickGames = this.handleClickGames.bind(this);
-    this.handleCheckboxTitleClick = this.handleCheckboxTitleClick.bind(this);
-  };
-
-  handleCheckboxTitleClick(field) {
-    return () => {
-      const newState = !this.state[field];
-      this.setState({[field]: newState});
-    }
-  }
-
-  handleCheckboxClick(e) {
-    if (
-      e.target.tagName.toLowerCase() === "input" &&
-      e.target.type === "checkbox"
-    ) {
-      const categories = 
-      Array.from(document
-        .querySelectorAll(".categories-div input[type=checkbox]:checked"))
-        .map(el => el.value);
-      const mechanics = 
-      Array.from(document
-        .querySelectorAll(".mechanics-div input[type=checkbox]:checked"))
-        .map(el => el.value);
-      this.props.resetPageNum();
-      
-      const pageNum = 1;
-      this.props.getInitialGames(pageNum, categories, mechanics);
-      this.props.incrementPageNum();
-    }
   };
 
   handleClickStart(e) {
     e.preventDefault();
     document.querySelector("#start").scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
-  handleClickGames(e) {
-    e.preventDefault();
-    document.querySelector("#games").scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   render() {
@@ -90,32 +50,7 @@ class MainPage extends React.Component {
             <p>Select as many as you'd like to narrow down your options</p>
           </div>
 
-          <div className="scroll-containers" onClick={this.handleCheckboxClick}>
-            <div className="categories-div checkboxes-wrapper">
-              <p
-                className={"checkbox-title"}
-                onClick={this.handleCheckboxTitleClick("categories")}
-              >
-                Categories
-              </p>
-              <CategoryCheckBoxContainer {...this.props} hidden={this.state.categories} />
-            </div>
-
-            <div className="mechanics-div checkboxes-wrapper">
-              <p
-                className="checkbox-title"
-                onClick={this.handleCheckboxTitleClick("mechanics")}
-              >
-                Mechanics
-              </p>
-              <MechanicCheckBoxContainer {...this.props} hidden={this.state.mechanics} />
-            </div>
-            <br/>
-            <a className="a" onClick={this.handleClickGames}>See Games</a>
-            <br/>
-            <br/>
-          </div>
-
+          <Filters {...this.props} />
 
           <div id="games" className="display-text">
           </div>

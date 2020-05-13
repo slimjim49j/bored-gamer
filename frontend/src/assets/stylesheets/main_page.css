@@ -91,6 +91,11 @@
 
 }
 
+.splash-intro {
+  font-weight: 600;
+  text-shadow: 0 0 3px black;
+}
+
 .games-checkbox-container {
   display: flex;
   flex-direction: column;
@@ -112,6 +117,7 @@
 .display-text > h1 {
   font-size: 25px;
   text-shadow: 2px 2px black;
+  padding-bottom: 7px;
 }
 
 .scroll-containers {

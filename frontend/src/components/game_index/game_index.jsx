@@ -54,9 +54,12 @@ class GameIndex extends React.Component {
             Array.from(document
                 .querySelectorAll(".mechanics-div input[type=checkbox]:checked"))
                 .map(el => el.value);
+        
         const pageNum = this.props.pageNum;
+        const sort = document.querySelector(".sort-dropdown :checked").value;
+        const order = document.querySelector(".order-checkbox").checked ? -1 : 1;
 
-        this.props.getMoreGames(pageNum, categories, mechanics)
+        this.props.getMoreGames({pageNum, categories, mechanics, sort, order})
             .then(() => this.props.incrementPageNum());
     };
 
@@ -69,7 +72,12 @@ class GameIndex extends React.Component {
 
     render() {
         const { games, gameCount } = this.props;
-
+        const gameOrder = document.querySelector(".sort-dropdown :checked");
+        const selectedProperty = (
+            gameOrder && 
+            gameOrder.value !== "_id" &&
+            gameOrder.value !== "title") ? gameOrder.value : null;
+        // debugger
         return (
             <div className="main-game-index-div">
                 <p className="game-count">Games Available: { gameCount }</p>
@@ -86,7 +94,7 @@ class GameIndex extends React.Component {
                                 >
                                     <img src={game.imageUrl} className="game-image-index" alt="boardgame"/>
                                     <label className="game-index-title">{game.title}</label>
-        
+                                    <p>{selectedProperty && `${gameOrder.text}: ${game[selectedProperty]}`}</p>
                             </Link>
                         </li>
                     ))}

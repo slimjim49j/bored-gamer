@@ -35,7 +35,7 @@
   width: 100%;
 }
 
-.checkbox-li:hover {
+.checkbox-li:hover span{
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
   transition-duration: 0.3s;
@@ -68,7 +68,7 @@
 .checkbox-title:hover {
   cursor: pointer;
   
-  background-color: rgb(66, 82, 82);
+  background-color: rgba(66, 82, 82, 0.699);
 }
 
 

@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   resetPageNum: () => dispatch(resetPageNum()),
   incrementPageNum: () => dispatch(incrementPageNum()),
-  getInitialGames: (pageNum, categories, mechanics) => dispatch(getInitialGames(pageNum, categories, mechanics)),
+  getInitialGames: (indexParams) => dispatch(getInitialGames(indexParams)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
