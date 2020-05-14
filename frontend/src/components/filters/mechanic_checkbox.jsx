@@ -16,8 +16,7 @@ class MechanicCheckBox extends React.Component {
         
     render() {
         return (
-            this.props.hidden ? (
-            <div>
+            <div className={this.props.hidden ? "hidden" : ""}>
                 <ul className="checkboxes">
                 {this.state.mechanics.map((mechanic, i) => (
                     <li key={`${i}`} className="checkbox-li">
@@ -29,7 +28,6 @@ class MechanicCheckBox extends React.Component {
                 ))}
                 </ul>
             </div>
-            ) : null
         )
     };
 };
