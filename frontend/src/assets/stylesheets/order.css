@@ -22,7 +22,7 @@
   
   width: 400px;
   height: 30px;
-  border-color: black;
+  border: 1px solid black;
   margin-right: 10px;
 }
 

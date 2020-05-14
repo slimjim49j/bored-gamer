@@ -18,13 +18,19 @@
 }
 
 .game-container {
-  width: 80vw;
-  margin: 80px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
+  
+  width: 80vw;
+  padding: 80px 0 40px 0;
+  border-bottom: 5px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+
+  border-image-source: linear-gradient(to left, #2600ff94, #006effe8,#00df70ce, #00ff0d81);
 }
 
 .game-contents {
@@ -111,7 +117,7 @@ input:hover {
 }
 
 .prev-page {
-  margin: 25px;
+  margin-top: 25px;
   text-decoration: none;
   color: white;
 }
@@ -119,4 +125,49 @@ input:hover {
 .prev-page:hover {
   opacity: 0.8;
   transition-duration: 0.3s;
+}
+
+
+
+/* likes */
+.likes-container {
+  /* padding-top: 40px; */
+  color: white;
+}
+
+.likes-container li {
+  display: flex;
+  padding: 25px 50px;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.425); */
+
+  border-bottom: 5px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+
+  border-image-source: linear-gradient(to left, #2600ff38, #006effb7,#00df6fa9, #00ff0d2f);
+}
+
+.thumb {
+  /* display: inline-block; */
+  /* position: relative;
+  top: 0; */
+  padding: 10px;
+}
+
+.like-header span {
+  color: lightgray;
+  font-size: 14px;
+}
+
+.like-content h3 {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+
+  padding-right: 10px;
+}
+
+.like-content p {
+  padding-top: 8px;
+  color: whitesmoke;
 }

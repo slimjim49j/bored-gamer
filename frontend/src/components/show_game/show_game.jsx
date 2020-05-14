@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../assets/stylesheets/game_show.css'
 import { Link } from 'react-router-dom';
+import Likes from "./likes";
 
 class ShowGame extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class ShowGame extends React.Component {
         dislike: null,
         review: ''
       }, 
-      gameLikes: {}
+      userLikes: [],
     }
     this.handleLike = this.handleLike.bind(this);
     this.handleDislike = this.handleDislike.bind(this);
@@ -22,25 +23,34 @@ class ShowGame extends React.Component {
   };
 
   componentDidMount() {
-    const game = this.props.getOneGame(this.props.match.params.gameId)
+    this.props.getOneGame(this.props.match.params.gameId)
       .then(game => this.setState({ game: game.data, like: { ...this.state.like, gameId: game.data._id } }));
     this.props.receiveDestination(null);
 
-    const gameLikes = this.props.getGameLikes(this.props.match.params.gameId)
-      .then(games => this.setState({ likedGames: games.data[0] }))
+    this.props.getGameLikes(this.props.match.params.gameId)
+      .then(res => {
+        const users = res.data;
+        this.setState({ userLikes: users })
+      });
   };
 
   handleLike(e) {
     e.preventDefault();
     const like = Object.assign({}, this.state.like);
-    this.props.createLike(like);
-    this.setState({
-      like: {
-        gameId: this.state.like.gameId,
-        dislike: null,
-        review: ''
-      }
-    });
+    this.props.createLike(like)
+      .then(like => (
+        this.setState({
+          like: {
+            gameId: this.state.like.gameId,
+            dislike: null,
+            review: ''
+          },
+          userLikes: this.state.userLikes.concat({
+            username: this.props.currentUser.username,
+            likes: [like.data]
+          })
+        })
+      ));
   };
 
   handleDislike(e) {
@@ -58,10 +68,8 @@ class ShowGame extends React.Component {
 
   render() {
     const game = this.state.game;
-    const reviews = this.state.likedGames ? this.state.likedGames : null
-    // if (reviews) console.log(reviews.likes);
   
-    if (!Array.isArray(game.categories) || !reviews) {
+    if (!Array.isArray(game.categories)) {
       return null
     } else {
       return (
@@ -115,11 +123,7 @@ class ShowGame extends React.Component {
             </div>
             <Link className="prev-page" to="/">Play a different game</Link>
           </div>
-          <div>
-            {reviews.likes.map((review) => 
-              console.log(review)
-            )}
-          </div>
+          <Likes userLikes={this.state.userLikes} />
         </div>
       )
     }
