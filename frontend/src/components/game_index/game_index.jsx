@@ -25,7 +25,7 @@ class GameIndex extends React.Component {
                     hasMore,
                 },
             } = this; 
-
+            
             if (error || isLoading || !hasMore) return;
 
             if (
@@ -35,7 +35,7 @@ class GameIndex extends React.Component {
                 loadGames();
             }
         }, 100);
-
+            
         this.handleClick = this.handleClick.bind(this);
     };
 
@@ -44,6 +44,10 @@ class GameIndex extends React.Component {
         this.props.getInitialGames(1)
             .then(() => this.props.incrementPageNum());
     };
+
+    componentWillUnmount() {
+        window.onscroll = undefined;
+    }
 
     loadGames = () => {
         const categories =
@@ -56,7 +60,12 @@ class GameIndex extends React.Component {
                 .map(el => el.value);
         
         const pageNum = this.props.pageNum;
-        const sort = document.querySelector(".sort-dropdown :checked").value;
+
+        const sortDropdown = document.querySelector(".sort-dropdown :checked");
+        // line below prevents weird error when navigate to seperate page and scrolled far enough down
+        if (!sortDropdown) return;
+
+        const sort = sortDropdown.value;
         const order = document.querySelector(".order-checkbox").checked ? -1 : 1;
 
         this.props.getMoreGames({pageNum, categories, mechanics, sort, order})

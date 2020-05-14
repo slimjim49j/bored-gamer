@@ -53,6 +53,7 @@
   border: none;
   border-radius: 2px;
   font-size: 12px;
+  cursor: text;
 }
 
 .session-form > input:focus {
