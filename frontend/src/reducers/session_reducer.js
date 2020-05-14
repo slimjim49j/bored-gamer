@@ -39,7 +39,8 @@ export default function (state = initialState, action) {
             nextState.pageNum = 1;
             return nextState;
 
-        case RECEIVE_GAMES, REPLACE_ALL_GAMES:
+        case RECEIVE_GAMES:
+        case REPLACE_ALL_GAMES:
             nextState.gameCount = action.games.gameCount;
             return nextState;
 

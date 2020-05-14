@@ -55,7 +55,7 @@ class ShowUserLike extends React.Component {
                       className="user-game-link">
                       {game.game.title}
                     </Link>
-                    <img src={game.game.imageUrl} className="user-game-image"/>
+                    <img src={game.game.imageUrl} alt="boardgame" className="user-game-image"/>
                     <p className="user-game-review">{game.review}</p>
                   </li>
                 )}

@@ -70,10 +70,14 @@
 }
 
 .a {
+  background: transparent;
+  color: hsla(0,0%,100%,.8);
   font-size: 24px;
   font-weight: 700;
   cursor: pointer;
   text-shadow: 2px 2px black;
+
+  border: none;
 }
 
 .a:hover {

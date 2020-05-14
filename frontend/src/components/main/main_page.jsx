@@ -39,7 +39,7 @@ class MainPage extends React.Component {
           <p className="splash-intro">For when you just don't know what to play</p>
           <br/>
           <br/>
-          <a className="a" onClick={this.handleClickStart} >Get Started</a>
+          <button className="a" onClick={this.handleClickStart} >Get Started</button>
         </div>
 
         <br/>

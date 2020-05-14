@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "../../assets/stylesheets/order.css";
 
 export default props => {

@@ -84,7 +84,7 @@ class Filters extends Component {
           {/* sort */}
           <Sort handleFilterChange={this.handleFilterChange} />
           <br/>
-          <a className="a" onClick={this.handleClickGames}>See Games</a>
+          <button className="a" onClick={this.handleClickGames}>See Games</button>
           <br/>
           <br/>
         </div>
