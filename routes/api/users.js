@@ -9,6 +9,10 @@ const passport = require("passport");
 const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
 
+// depreacation warning on findOneAndUpdate 
+// https://mongoosejs.com/docs/deprecations.html#findandmodify
+mongoose.set('useFindAndModify', false);
+
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 

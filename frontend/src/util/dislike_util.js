@@ -8,10 +8,18 @@ export const getDislikes = (userId, dislike) => {
     })
 };
 
-export const createLike = (like) => {
+export const postLike = (like) => {
   return axios.post(`/api/likes`, like);
-}; 
+};
+
+export const patchLike = (like) => {
+    return axios.patch(`/api/likes/${like._id}`, like);
+};
+
+export const deleteLike = (likeId) => {
+    return axios.delete(`/api/likes/${likeId}`);
+};
 
 export const getGameLikes = (gameId) => {
-    return axios.get(`/api/games/${gameId}/likes`)
+    return axios.get(`/api/games/${gameId}/likes`);
 };

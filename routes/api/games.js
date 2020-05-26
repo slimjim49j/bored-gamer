@@ -54,23 +54,19 @@ router.get('/:gameId', (req, res) => {
 router.get('/:gameId/likes', (req, res) => {
     User.aggregate([
         {
+            '$unwind': {
+                'path': '$likes',
+                'preserveNullAndEmptyArrays': true
+            }
+        }, {
             '$match': {
-                'likes.gameId': new ObjectId('5e766e958c93f01b4c3010bc')
+                'likes.gameId': new ObjectId(req.params.gameId)
             }
         }, {
             '$project': {
+                'userId': '$_id',
                 'username': 1,
-                'likes': {
-                    '$filter': {
-                        'input': '$likes',
-                        'as': 'like',
-                        'cond': {
-                            '$eq': [
-                                '$$like.gameId', new ObjectId(req.params.gameId)
-                            ]
-                        }
-                    }
-                }
+                'likes': 1
             }
         }
     ], function (err, data) {
