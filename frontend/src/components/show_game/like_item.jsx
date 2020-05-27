@@ -13,6 +13,7 @@ class LikeItem extends React.Component {
         this.handleDislike = this.handleDislike.bind(this);
         this.handleReview = this.handleReview.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
     }
 
@@ -31,6 +32,12 @@ class LikeItem extends React.Component {
             review: e.target.value,
         });
     };
+
+    handleCancel() {
+        this.toggleEdit();
+        const { review, dislike } = this.props.like;
+        this.setState({review, dislike})
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -63,7 +70,7 @@ class LikeItem extends React.Component {
                     >
                     </textarea>
                 </label>
-                <button onClick={this.toggleEdit}>Cancel</button>
+                <button onClick={this.handleCancel}>Cancel</button>
                 <button onClick={this.handleSubmit}>Save</button>
             </div>
         ) : (
@@ -111,13 +118,3 @@ class LikeItem extends React.Component {
 }
 
 export default LikeItem;
-
-/*
-save review and dislike in state
-handleSubmit
-get rid of review on cancel
-
-update and delete in backend
-
-delete button onclick
-*/

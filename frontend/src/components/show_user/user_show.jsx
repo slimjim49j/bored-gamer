@@ -19,7 +19,6 @@ class ShowUserLike extends React.Component {
   render () {
     const games = Object.values(this.state.games)
     if (!games) return null;
-    console.log(games);
     
     const { user } = this.props;
 
