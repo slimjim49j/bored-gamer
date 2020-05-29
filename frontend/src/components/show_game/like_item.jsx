@@ -70,15 +70,17 @@ class LikeItem extends React.Component {
                     >
                     </textarea>
                 </label>
-                <button onClick={this.handleCancel}>Cancel</button>
-                <button onClick={this.handleSubmit}>Save</button>
+                <div className="like-control-btn-wrapper">
+                    <button className="like-control-btn" onClick={this.handleCancel}>Cancel</button>
+                    <button className="like-control-btn save-btn" onClick={this.handleSubmit}>Save</button>
+                </div>
             </div>
         ) : (
             <p>{like.review}</p>
         );
 
         const thumb = this.state.edit ?  (
-            <div >
+            <div className="thumb-edit">
                 <label> <span role="img" aria-label="like">👍🏼</span>
                     <input type="radio" name="likability" value="like" onChange={this.handleDislike} checked={!this.state.dislike} />
                 </label>
@@ -92,6 +94,7 @@ class LikeItem extends React.Component {
 
         return (
             <li key={key}>
+            <div className="like-top">            
             { thumb }
             <div className="like-content">
                 <div className="like-header">
@@ -101,16 +104,17 @@ class LikeItem extends React.Component {
 
                 { reviewText }
                 
-                <div>
-                    {
-                        (this.props.currentUserId === like.userId) && !this.state.edit ? (
-                            <>
-                            <button onClick={this.toggleEdit}>Edit</button>
-                            <button onClick={this.handleDelete}>Delete</button>
-                            </>
-                        ) : null
-                    }
-                </div>
+            </div>
+            </div>
+            <div>
+                {
+                    (this.props.currentUserId === like.userId) && !this.state.edit ? (
+                        <div className="like-control-btn-wrapper">
+                            <button className="like-control-btn" onClick={this.toggleEdit}>Edit</button>
+                            <button className="like-control-btn" onClick={this.handleDelete}>Delete</button>
+                        </div>
+                    ) : null
+                }
             </div>
             </li>
         )

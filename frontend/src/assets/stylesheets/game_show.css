@@ -106,7 +106,7 @@ textarea {
   font-size: 14px;
 }
 
-.save-game-btn:hover {
+.save-game-btn:hover, .like-control-btn:hover {
   cursor: pointer;
   opacity: 0.8;
   transition-duration: 0.3s;
@@ -136,8 +136,9 @@ input[type=radio]:hover {
 }
 
 .likes-container li {
-  display: flex;
-  padding: 25px 50px;
+  /* display: flex; */
+  overflow: hidden;
+  padding: 25px 50px 10px;
   /* border-bottom: 1px solid rgba(255, 255, 255, 0.425); */
 
   border-bottom: 5px solid;
@@ -152,6 +153,18 @@ input[type=radio]:hover {
   /* position: relative;
   top: 0; */
   padding: 10px;
+}
+
+.thumb-edit {
+  padding-right: 10px;
+}
+
+.thumb-edit label {
+  cursor: pointer;
+}
+
+.like-top {
+  display: flex;
 }
 
 .like-header span {
@@ -170,4 +183,39 @@ input[type=radio]:hover {
 .like-content p {
   padding-top: 8px;
   color: whitesmoke;
+}
+
+
+
+
+.like-control-btn-wrapper {
+  padding-top: 10px;
+  /* float: right; */
+}
+
+.like-control-btn {
+  /* width: 60px; */
+  /* background-color: rgb(0, 36, 26); */
+  background-color: transparent;
+  color: rgb(206, 206, 206);
+  font-size: 14px;
+
+  /* border: 1px solid white; */
+  border: none;
+  margin-right: 6px;
+  padding: 5px 10px;
+}
+
+.save-btn {
+  color: rgb(230, 230, 230);
+  font-weight: bold;
+  background-color: rgb(0, 36, 26);
+
+  border: 0.2px solid #ffffff4f;
+}
+
+.like-content textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
 }
