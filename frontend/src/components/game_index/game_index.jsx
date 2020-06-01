@@ -91,10 +91,10 @@ class GameIndex extends React.Component {
             <div className="main-game-index-div">
                 <p className="game-count">Games Available: { gameCount }</p>
                 <ul className="all-games" onClick={this.handleClick}>
-                    {games.map((game, i) => (
+                    {games.map((game) => (
                         <li
                             className="games-list"
-                            key={`${i}`}
+                            key={`${game._id}`}
                             data-destination={`/games/${game._id}`} 
                             >
                             <Link

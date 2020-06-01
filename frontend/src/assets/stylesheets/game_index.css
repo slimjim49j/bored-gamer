@@ -32,7 +32,8 @@
   margin: 20px 10px;
   text-decoration: none;
   color: white;
-  
+  text-shadow: -1px 1px 0 black,
+               -1px 1px 7px black;
 }
 
 li {
