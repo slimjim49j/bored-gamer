@@ -42,6 +42,7 @@ Users may select a game, leading to its' show page. Each game holds important in
 The user also has the option to rate it themselves after they've played. 
 
 **Game Likes**
+
 ![Game Likes](https://github.com/slimjim49j/bored-gamer/blob/master/readme_images/6GAME_LIKES.png)
 
 When a user submits a review it can be seen in the like index for this game. Full CRUD operations are available on their likes, allowing for users to post, view, update, and delete their reviews.
@@ -49,6 +50,54 @@ When a user submits a review it can be seen in the like index for this game. Ful
 
 **User Profile** 
 
+```javascript
+router.get("/:userId/likes", (req, res) => {
+    const dislike = req.query.dislike === "true";
+    const userId = req.params.userId;
+
+    User.aggregate(
+      [
+        {
+          $match: {
+            _id: new ObjectId(userId),
+          },
+        },
+        {
+          $unwind: {
+            path: "$likes",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
+          $match: {
+            "likes.dislike": dislike,
+          },
+        },
+        {
+          $lookup: {
+            from: "games",
+            localField: "likes.gameId",
+            foreignField: "_id",
+            as: "game",
+          },
+        },
+      ],
+      function (err, data) {
+        if (err) {
+          throw err;
+        } else {
+            const formattedData = data.map(user => {
+                const newLike = {};
+                newLike.review = user.likes.review;
+                newLike.game = user.game[0];
+                return newLike;
+            });
+          return res.json(formattedData);
+        }
+      }
+    );
+})
+```
 
 Games that the user has rated or added to their collection will appear on their profile, allowing them easy access to games they've enjoyed. 
 
