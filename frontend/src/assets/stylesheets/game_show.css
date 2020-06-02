@@ -148,6 +148,10 @@ input[type=radio]:hover {
   border-image-source: linear-gradient(to left, #2600ff38, #006effb7,#00df6fa9, #00ff0d2f);
 }
 
+.likes-container li:last-child {
+  margin-bottom: 70px;
+}
+
 .thumb {
   /* display: inline-block; */
   /* position: relative;
@@ -218,4 +222,8 @@ input[type=radio]:hover {
   width: 100%;
   margin-top: 10px;
   padding: 5px;
+}
+
+.spacer-div {
+  height: 15px;
 }

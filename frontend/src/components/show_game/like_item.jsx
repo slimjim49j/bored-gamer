@@ -113,7 +113,7 @@ class LikeItem extends React.Component {
                             <button className="like-control-btn" onClick={this.toggleEdit}>Edit</button>
                             <button className="like-control-btn" onClick={this.handleDelete}>Delete</button>
                         </div>
-                    ) : null
+                    ) : <div className="spacer-div"></div>
                 }
             </div>
             </li>

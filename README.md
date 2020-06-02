@@ -41,6 +41,12 @@ with a live count of the number of games rendered under the given restrictions.
 Users may select a game, leading to its' show page. Each game holds important information, including ratings, play time, and more. 
 The user also has the option to rate it themselves after they've played. 
 
+**Game Likes**
+![Game Likes](https://github.com/slimjim49j/bored-gamer/blob/master/readme_images/6GAME_LIKES.png)
+
+When a user submits a review it can be seen in the like index for this game. Full CRUD operations are available on their likes, allowing for users to post, view, update, and delete their reviews.
+
+
 **User Profile** 
 
 
