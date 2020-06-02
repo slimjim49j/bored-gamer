@@ -127,7 +127,7 @@ router.get("/:userId/likes", (req, res) => {
       [
         {
           $match: {
-            _id: ObjectId(userId),
+            _id: new ObjectId(userId),
           },
         },
         {

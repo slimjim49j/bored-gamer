@@ -52,54 +52,53 @@ When a user submits a review it can be seen in the like index for this game. Ful
 
 ```javascript
 router.get("/:userId/likes", (req, res) => {
-    const dislike = req.query.dislike === "true";
-    const userId = req.params.userId;
+  const dislike = req.query.dislike === "true";
+  const userId = req.params.userId;
 
-    User.aggregate(
-      [
-        {
-          $match: {
-            _id: new ObjectId(userId),
-          },
+  User.aggregate(
+    [
+      {
+        $match: {
+          _id: new ObjectId(userId),
         },
-        {
-          $unwind: {
-            path: "$likes",
-            preserveNullAndEmptyArrays: true,
-          },
+      },
+      {
+        $unwind: {
+          path: "$likes",
+          preserveNullAndEmptyArrays: true,
         },
-        {
-          $match: {
-            "likes.dislike": dislike,
-          },
+      },
+      {
+        $match: {
+          "likes.dislike": dislike,
         },
-        {
-          $lookup: {
-            from: "games",
-            localField: "likes.gameId",
-            foreignField: "_id",
-            as: "game",
-          },
+      },
+      {
+        $lookup: {
+          from: "games",
+          localField: "likes.gameId",
+          foreignField: "_id",
+          as: "game",
         },
-      ],
-      function (err, data) {
-        if (err) {
-          throw err;
-        } else {
-            const formattedData = data.map(user => {
-                const newLike = {};
-                newLike.review = user.likes.review;
-                newLike.game = user.game[0];
-                return newLike;
-            });
-          return res.json(formattedData);
-        }
+      },
+    ],
+    function (err, data) {
+      if (err) {
+        throw err;
+      } else {
+          const formattedData = data.map(user => {
+              const newLike = {};
+              newLike.review = user.likes.review;
+              newLike.game = user.game[0];
+              return newLike;
+          });
+        return res.json(formattedData);
       }
-    );
+    });
 })
 ```
 
-Games that the user has rated or added to their collection will appear on their profile, allowing them easy access to games they've enjoyed. 
+Games that the user has rated or added to their collection will appear on their profile, allowing them easy access to games they've enjoyed. This code snippet shows how all the likes for a user are accessed by the dislike flag. These likes are then joined to the games collection and formatted for the frontend to receive.
 
 
 --- 
